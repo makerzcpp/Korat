@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Korat.iml" filepath="$PROJECT_DIR$/Korat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Korat-common/Korat-common.iml" filepath="$PROJECT_DIR$/Korat-common/Korat-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Korat-manage/Korat-manage.iml" filepath="$PROJECT_DIR$/Korat-manage/Korat-manage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Korat-manage/Korat-manage-mapper/Korat-manage-mapper.iml" filepath="$PROJECT_DIR$/Korat-manage/Korat-manage-mapper/Korat-manage-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Korat-manage/Korat-manage-pojo/Korat-manage-pojo.iml" filepath="$PROJECT_DIR$/Korat-manage/Korat-manage-pojo/Korat-manage-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Korat-manage/Korat-manage-service/Korat-manage-service.iml" filepath="$PROJECT_DIR$/Korat-manage/Korat-manage-service/Korat-manage-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Korat-manage/Korat-manage-web/Korat-manage-web.iml" filepath="$PROJECT_DIR$/Korat-manage/Korat-manage-web/Korat-manage-web.iml" />
+    </modules>
+  </component>
+</project>

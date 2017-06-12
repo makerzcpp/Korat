@@ -1,0 +1,1 @@
+2017-06-12 19:00:05 [ WARN ] [ ClassPathMapperScanner.java :158(doScan)]  No MyBatis mapper was found in '[com.korat.usermanage.mapper]' package. Please check your configuration.
