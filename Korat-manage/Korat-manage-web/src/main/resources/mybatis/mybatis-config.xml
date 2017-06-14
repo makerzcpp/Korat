@@ -4,6 +4,14 @@
 
 <configuration>
 
+    <!--在控制台打印sql语句-->
+    <properties>
+        <property name="dialect" value="mysql"/>
+    </properties>
+
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
 
     <plugins>
         <!-- 分页助手 -->

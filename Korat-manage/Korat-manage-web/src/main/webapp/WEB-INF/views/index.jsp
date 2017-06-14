@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>淘淘商城后台管理系统</title>
+	<title>Korat</title>
 <jsp:include page="/commons/common-js.jsp"/>
 <style type="text/css">
 	.content {

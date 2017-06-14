@@ -8,12 +8,12 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/Korat-manage/Korat-manage-mapper/pom.xml" />
+        <option value="$PROJECT_DIR$/Korat-manage/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/Korat-manage-mapper/pom.xml" />
-        <option value="$PROJECT_DIR$/Korat-manage/pom.xml" />
       </set>
     </option>
   </component>

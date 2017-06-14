@@ -19,13 +19,14 @@ Date.prototype.format = function(format){
     return format; 
 };
 
-var TT = TAOTAO = {
+var TT = KORAT = {
 	// 编辑器参数
 	kingEditorParams : {
 		filePostName  : "uploadFile",
 		uploadJson : '/rest/pic/upload',
 		dir : "image"
-	},
+
+    },
 	// 格式化时间
 	formatDateTime : function(val,row){
 		var now = new Date(val);
