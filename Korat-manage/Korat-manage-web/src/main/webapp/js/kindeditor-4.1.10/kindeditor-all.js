@@ -1196,7 +1196,7 @@ function _query(expr, root) {
 K.query = _query;
 K.queryAll = _queryAll;
 function _get(val) {
-	return K(val)[0];
+	return _K(val)[0];
 }
 function _getDoc(node) {
 	if (!node) {
@@ -1221,8 +1221,8 @@ function _setHtml(el, html) {
 		var temp = doc.getElementById('__kindeditor_temp_tag__');
 		temp.parentNode.removeChild(temp);
 	} catch(e) {
-		K(el).empty();
-		K('@' + html, doc).each(function() {
+		_K(el).empty();
+		_K('@' + html, doc).each(function() {
 			el.appendChild(this);
 		});
 	}
@@ -1572,7 +1572,7 @@ _extend(KNode, {
 			node.parentNode.replaceChild(newNode, node);
 			nodes.push(newNode);
 		});
-		return K(nodes);
+		return _K(nodes);
 	},
 	empty : function() {
 		var self = this;

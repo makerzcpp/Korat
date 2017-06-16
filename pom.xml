@@ -10,7 +10,7 @@
     <modules>
         <module>Korat-common</module>
         <module>Korat-manage</module>
-        <module>Korat-manage</module>
+        <module>Korat-web</module>
     </modules>
     <packaging>pom</packaging>
 

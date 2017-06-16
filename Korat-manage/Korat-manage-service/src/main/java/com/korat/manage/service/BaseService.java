@@ -163,7 +163,7 @@ public abstract class BaseService<T extends BasePojo> {
     public EasyUIResult queryItemList(Integer page, Integer rows) {
         PageHelper.startPage(page, rows);
         Example example = new Example(Item.class);
-        example.setOrderByClause("updated DESC");
+        example.setOrderByClause("updated ");
         List<T> list = mapper.selectByExample(example);
         PageInfo<T> pageInfo = new PageInfo<T>(list);
         return new EasyUIResult(pageInfo.getTotal(), pageInfo.getList());

@@ -56,7 +56,7 @@
         iconCls:'icon-cancel',
         handler:function(){
         	var ids = getSelectionsIds();
-        	if(ids.length == 0){
+        	if(ids.length === 0){
         		$.messager.alert('提示','未选中商品规格!');
         		return ;
         	}
@@ -64,7 +64,7 @@
         	    if (r){
         	    	var params = {"ids":ids};
                 	$.post("/rest/item/param/delete",params, function(data){
-            			if(data.status == 200){
+            			if(data.status === 200){
             				$.messager.alert('提示','删除商品规格成功!',undefined,function(){
             					$("#itemParamList").datagrid("reload");
             				});

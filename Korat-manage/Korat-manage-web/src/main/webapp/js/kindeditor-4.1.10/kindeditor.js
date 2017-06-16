@@ -1153,7 +1153,7 @@ function _queryAll(expr, root) {
 		}
 	}
 	var results = [];
-	if (parts.length == 1) {
+	if (parts.length === 1) {
 		return select(parts[0], root);
 	}
 	var isChild = false, part, els, subResults, val, v, i, j, k, length, len, l;
@@ -1196,7 +1196,7 @@ function _query(expr, root) {
 K.query = _query;
 K.queryAll = _queryAll;
 function _get(val) {
-	return K(val)[0];
+	return _K(val)[0];
 }
 function _getDoc(node) {
 	if (!node) {

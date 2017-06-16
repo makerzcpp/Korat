@@ -12,19 +12,19 @@
                 <td>商品类目:</td>
                 <td>
                     <a href="javascript:void(0)" class="easyui-linkbutton selectItemCat">选择类目</a>
-                    <input type="hidden" name="cid" style="width: 280px;"></input>
+                    <input type="hidden" name="cid" style="width: 280px;"/>
                 </td>
             </tr>
             <tr>
                 <td>商品标题:</td>
                 <td><input class="easyui-textbox" type="text" name="title" data-options="required:true"
-                           style="width: 280px;"></input></td>
+                           style="width: 280px;"/></td>
             </tr>
             <tr>
                 <td>商品卖点:</td>
                 <td><input class="easyui-textbox" name="sellPoint"
                            data-options="multiline:true,validType:'length[0,150]'"
-                           style="height:60px;width: 280px;"></input></td>
+                           style="height:60px;width: 280px;"/></td>
             </tr>
             <tr>
                 <td>商品价格:</td>
@@ -60,7 +60,7 @@
             <tr class="params hide">
                 <td>商品规格:</td>
                 <td>
-
+                    <%--会在此用js插入商品规格--%>
                 </td>
             </tr>
         </table>
@@ -87,6 +87,7 @@
             $.messager.alert('提示', '表单还未填写完成!');
             return;
         }
+
         //处理商品的价格的单位，将元转化为分
         $("#itemAddForm [name=price]").val(eval($("#itemAddForm [name=priceView]").val()) * 100);
         //将编辑器中的内容同步到隐藏多行文本中
@@ -147,7 +148,6 @@
             }
         });
     }
-
     function clearForm() {
         $('#itemAddForm').form('reset');
         itemAddEditor.html('');

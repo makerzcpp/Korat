@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Korat-web:war">
+    <output-path>$PROJECT_DIR$/Korat-web/target</output-path>
+    <root id="archive" name="Korat-web.war">
+      <element id="artifact" artifact-name="Korat-web:war exploded" />
+    </root>
+  </artifact>
+</component>

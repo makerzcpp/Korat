@@ -13,11 +13,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping("page")
-public class JumpToPage {
+public class PageController {
 
+    /**
+     * 跳转到任意页面的方法
+     * @param pageName
+     * @return
+     */
     @RequestMapping(value = "{pageName}",method = RequestMethod.GET)
     public String toPage(@PathVariable("pageName") String pageName){
         return pageName;
     }
 
+    //@RequestMapping(value = "item-edit")
+    //public String query
 }
