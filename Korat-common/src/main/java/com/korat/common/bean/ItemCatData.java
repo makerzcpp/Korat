@@ -1,4 +1,4 @@
-package com.korat.manage.domain;
+package com.korat.common.bean;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

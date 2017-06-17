@@ -33,7 +33,6 @@
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.1.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.1.3.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.3.RELEASE" />
           <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:3.7.5" />
           <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:0.9.1" />
           <element id="archive" name="Korat-manage-mapper-1.0-SNAPSHOT.jar">
@@ -48,6 +47,10 @@
             <element id="module-output" name="Korat-manage-pojo" />
           </element>
           <element id="library" level="project" name="Maven: joda-time:joda-time:2.5" />
+          <element id="archive" name="Korat-common-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="Korat-common" />
+          </element>
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.6.4" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.16" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.2" />

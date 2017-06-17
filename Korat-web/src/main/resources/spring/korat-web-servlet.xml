@@ -8,6 +8,7 @@
     <!--注解扫描-->
     <mvc:annotation-driven/>
 
+
     <context:component-scan base-package="com.korat.web.controller"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

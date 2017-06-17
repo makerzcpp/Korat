@@ -1,12 +1,10 @@
 package com.korat.manage.controller;
 
-import com.github.abel533.entity.Example;
 import com.korat.manage.domain.EasyUIResult;
 import com.korat.manage.domain.Item;
 import com.korat.manage.domain.ItemDesc;
 import com.korat.manage.service.ItemDescService;
 import com.korat.manage.service.ItemService;
-import com.sun.scenario.effect.impl.prism.PrImage;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
