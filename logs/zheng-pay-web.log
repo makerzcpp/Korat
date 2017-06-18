@@ -330,3 +330,5 @@ public org.springframework.http.ResponseEntity<java.lang.Void> com.korat.manage.
 2017-06-16 19:10:54 [ WARN ] [ DispatcherServlet.java :1120(noHandlerFound)]  No mapping found for HTTP request with URI [/WEB-INF/views/index.html] in DispatcherServlet with name 'springmvc'
 2017-06-16 20:03:53 [ WARN ] [ DispatcherServlet.java :1120(noHandlerFound)]  No mapping found for HTTP request with URI [/products/1.html] in DispatcherServlet with name 'springmvc'
 2017-06-16 21:20:06 [ WARN ] [ DispatcherServlet.java :1120(noHandlerFound)]  No mapping found for HTTP request with URI [/products/6.html.html] in DispatcherServlet with name 'springmvc'
+2017-06-18 15:45:36 [ WARN ] [ DefaultHandlerExceptionResolver.java :198(handleHttpRequestMethodNotSupported)]  Request method 'POST' not supported
+2017-06-18 15:45:39 [ WARN ] [ DefaultHandlerExceptionResolver.java :198(handleHttpRequestMethodNotSupported)]  Request method 'DELETE' not supported

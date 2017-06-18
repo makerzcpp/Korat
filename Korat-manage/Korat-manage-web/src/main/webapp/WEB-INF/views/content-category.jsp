@@ -25,7 +25,7 @@ $(function(){
         },
         onAfterEdit : function(node){
         	var _tree = $(this);
-        	if(node.id == 0){
+        	if(node.id === 0){
         		// 新增节点
         		$.post("/rest/content/category",{parentId:node.parentId,name:node.text},function(data){
         			_tree.tree("update",{

@@ -44,15 +44,15 @@
     cfg.DATA_MSlide = data;
     // 初始化一个广告信息
     if ( cfg.DATA_MSlide.length > 5 ) {
-    	var first = pageConfig.FN_GetCompatibleData( cfg.DATA_MSlide[0] );
+        var first = pageConfig.FN_GetCompatibleData( cfg.DATA_MSlide[0] );
         var TPL = ''
-            +'&lt;ul class="slide-items">'
-            +'&lt;li clstag="homepage|keycount|home2013|09a1">'
-            +'&lt;a href="'+ first.href +'" target="_blank" title="'+ first.alt +'">'
-            +'&lt;img src="'+ first.src +'" width="'+ first.width +'" height="'+ first.height +'" >'
+            +'<ul class="slide-items">'
+            +'<li clstag="homepage|keycount|home2013|09a1">'
+            +'<a href="'+ first.href +'" target="_blank" title="'+ first.alt +'">'
+            +'<img src="'+ first.src +'" width="'+ first.width +'" height="'+ first.height +'" >'
             +'</a>'
             +'</li>'
-            +'&lt;/ul>&lt;div class="slide-controls">&lt;span class="curr">1&lt;/span>&lt;/div>';
+            +'</ul><div class="slide-controls"><span class="curr">1</span></div>';
         doc.write(TPL);
     }
 })(pageConfig, document);;</script>

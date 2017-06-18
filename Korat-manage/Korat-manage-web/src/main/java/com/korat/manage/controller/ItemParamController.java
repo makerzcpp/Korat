@@ -1,6 +1,6 @@
 package com.korat.manage.controller;
 
-import com.korat.manage.domain.EasyUIResult;
+import com.korat.common.bean.EasyUIResult;
 import com.korat.manage.domain.ItemParam;
 import com.korat.manage.domain.ItemParamItem;
 import com.korat.manage.service.ItemParamItemService;
@@ -75,7 +75,7 @@ public class ItemParamController {
      */
     @RequestMapping(method = RequestMethod.GET, value = "param/list")
     public ResponseEntity<EasyUIResult> queryItemParam(@RequestParam(value = "page") Integer page,
-                                                    @RequestParam(value = "rows") Integer rows) {
+                                                       @RequestParam(value = "rows") Integer rows) {
         try {
             EasyUIResult easyUIResult = itemParamService.queryItemList(page, rows);
             if (easyUIResult != null) {

@@ -4,8 +4,8 @@ import com.github.abel533.entity.Example;
 import com.github.abel533.mapper.Mapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.korat.common.bean.EasyUIResult;
 import com.korat.manage.domain.BasePojo;
-import com.korat.manage.domain.EasyUIResult;
 import com.korat.manage.domain.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 

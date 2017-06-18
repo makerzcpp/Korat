@@ -26,31 +26,31 @@ public class ApiItemCatController {
     private ItemCatService itemCatService;
 
     private ObjectMapper objectMapper = new ObjectMapper();
-    //@RequestMapping(method = RequestMethod.GET)
-    //public ResponseEntity<ItemCatResult> queryItemCat() {
-    //    try {
-    //        ItemCatResult itemCatResult = itemCatService.queryAllToTree();
-    //        return ResponseEntity.ok(itemCatResult);
-    //    } catch (Exception e) {
-    //        e.printStackTrace();
-    //    }
-    //    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
-    //}
-
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<String> queryItemCat(@RequestParam(value = "callback",required = false)String callback) {
+    public ResponseEntity<ItemCatResult> queryItemCat() {
         try {
             ItemCatResult itemCatResult = itemCatService.queryAllToTree();
-            String result = objectMapper.writeValueAsString(itemCatResult);
-            if (StringUtils.isEmpty(callback)) {
-                //无需跨域
-                return ResponseEntity.ok(result);
-            }
-            //要跨域
-            return ResponseEntity.ok(callback + "(" + result + ")");
+            return ResponseEntity.ok(itemCatResult);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
     }
+
+    //@RequestMapping(method = RequestMethod.GET)
+    //public ResponseEntity<String> queryItemCat(@RequestParam(value = "callback",required = false)String callback) {
+    //    try {
+    //        ItemCatResult itemCatResult = itemCatService.queryAllToTree();
+    //        String result = objectMapper.writeValueAsString(itemCatResult);
+    //        if (StringUtils.isEmpty(callback)) {
+    //            //无需跨域
+    //            return ResponseEntity.ok(result);
+    //        }
+    //        //要跨域
+    //        return ResponseEntity.ok(callback + "(" + result + ")");
+    //    } catch (Exception e) {
+    //        e.printStackTrace();
+    //    }
+    //    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+    //}
 }

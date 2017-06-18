@@ -1,6 +1,6 @@
 package com.korat.manage.controller;
 
-import com.korat.manage.domain.EasyUIResult;
+import com.korat.common.bean.EasyUIResult;
 import com.korat.manage.domain.Item;
 import com.korat.manage.domain.ItemDesc;
 import com.korat.manage.service.ItemDescService;
