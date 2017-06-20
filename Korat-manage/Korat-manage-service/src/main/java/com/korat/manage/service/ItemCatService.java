@@ -1,7 +1,11 @@
 package com.korat.manage.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.korat.common.bean.ItemCatData;
 import com.korat.common.bean.ItemCatResult;
+import com.korat.common.service.RedisService;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.github.abel533.entity.Example;
 import com.github.abel533.mapper.Mapper;
@@ -19,12 +23,26 @@ import java.util.List;
  */
 @Service
 public class ItemCatService extends BaseService<ItemCat> {
-
-
+    @Autowired
+    private RedisService redisService;
+    @Value("${KORAT_MANAGE_SERVICE_ITEM_CAT_ALL}")
+    private String key;
     @Autowired
     private Mapper<ItemCat> mapper;
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     public ItemCatResult queryAllToTree() {
+
+        //从缓存中取出
+        try {
+            String value = this.redisService.get(key);
+            if (StringUtils.isNotEmpty(value)) {
+                return this.objectMapper.readValue(value, ItemCatResult.class);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         //最后封装的结果
         ItemCatResult itemCatResult = new ItemCatResult();
         //众二级目录
@@ -91,6 +109,13 @@ public class ItemCatService extends BaseService<ItemCat> {
             level.add(itemCatData);
         }
         itemCatResult.setItemCats(level);
+
+        //存入redis中
+        try {
+            this.redisService.set(key, objectMapper.writeValueAsString(itemCatResult), 60 * 60 * 24 * 30 * 3);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return itemCatResult;
     }
 }

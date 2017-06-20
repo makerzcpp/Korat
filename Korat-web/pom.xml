@@ -69,6 +69,11 @@
            <groupId>org.apache.commons</groupId>
            <artifactId>commons-io</artifactId>
        </dependency>
+       <dependency>
+           <groupId>com.Korat</groupId>
+           <artifactId>Korat-manage-service</artifactId>
+           <version>1.0-SNAPSHOT</version>
+       </dependency>
    </dependencies>
 
     <build>

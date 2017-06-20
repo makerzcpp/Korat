@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-    <title>登录淘淘</title>
+    <title>登录KORAT</title>
     <link type="text/css" rel="stylesheet" href="/css/login.css"/>
     <script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
     <script type="text/javascript" src="/js/login/g.base.js"></script>
@@ -45,7 +45,7 @@
 <div class="w">
     <div id="logo">
     	<a href="http://www.korat.com/" clstag="passport|keycount|login|01">
-    		<img src="/images/korat-logo.gif" alt="淘淘" width="170" height="60"/>
+    		<img src="/images/korat-logo.gif" alt="KORAT" width="170" height="60"/>
     	</a><b></b>
    	</div>
 </div>
@@ -141,7 +141,7 @@
             </div>
                 <div class="coagent hide" clstag="passport|keycount|login|07">
                     <label class="ftx24">
-                        使用合作网站账号登录淘淘：
+                        使用合作网站账号登录KORAT：
                         <span class="clr"></span><input type="hidden" name="KbmPxRtWsz" value="IMdug" />
                     <span class="btns qq"><s></s> <a href="javascript:void(0)"
                                                      onclick="window.location='http://qq.jd.com/new/qq/login.aspx'+window.location.search;return false;">QQ</a></span>
