@@ -9,6 +9,7 @@
     <file url="file://$PROJECT_DIR$/Korat-manage/Korat-manage-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Korat-manage/Korat-manage-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Korat-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/korat-sso" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

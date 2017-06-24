@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="korat-sso:war">
+    <output-path>$PROJECT_DIR$/korat-sso/target</output-path>
+    <root id="archive" name="korat-sso.war">
+      <element id="artifact" artifact-name="korat-sso:war exploded" />
+    </root>
+  </artifact>
+</component>

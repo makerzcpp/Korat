@@ -14,6 +14,11 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
    <dependencies>
+       <dependency>
+           <groupId>com.Korat</groupId>
+           <artifactId>Korat-manage-service</artifactId>
+           <version>1.0-SNAPSHOT</version>
+       </dependency>
        <!-- 单元测试 -->
        <dependency>
            <groupId>junit</groupId>
@@ -69,12 +74,9 @@
            <groupId>org.apache.commons</groupId>
            <artifactId>commons-io</artifactId>
        </dependency>
-       <dependency>
-           <groupId>com.Korat</groupId>
-           <artifactId>Korat-manage-service</artifactId>
-           <version>1.0-SNAPSHOT</version>
-       </dependency>
-   </dependencies>
+
+
+</dependencies>
 
     <build>
         <plugins>

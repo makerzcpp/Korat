@@ -11,6 +11,7 @@
         <module>Korat-common</module>
         <module>Korat-manage</module>
         <module>Korat-web</module>
+        <module>korat-sso</module>
     </modules>
     <packaging>pom</packaging>
 

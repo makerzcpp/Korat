@@ -22,6 +22,6 @@
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <table tableName="tb_item_desc" domainObjectName="ItemDesc"/>
+        <table tableName="tb_user" domainObjectName="user"/>
     </context>
 </generatorConfiguration>

@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/Korat-manage/Korat-manage-service/Korat-manage-service.iml" filepath="$PROJECT_DIR$/Korat-manage/Korat-manage-service/Korat-manage-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/Korat-manage/Korat-manage-web/Korat-manage-web.iml" filepath="$PROJECT_DIR$/Korat-manage/Korat-manage-web/Korat-manage-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/Korat-web/Korat-web.iml" filepath="$PROJECT_DIR$/Korat-web/Korat-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/korat-sso/korat-sso.iml" filepath="$PROJECT_DIR$/korat-sso/korat-sso.iml" />
     </modules>
   </component>
 </project>
