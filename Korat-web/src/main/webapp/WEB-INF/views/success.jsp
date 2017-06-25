@@ -13,20 +13,20 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
    <meta name="format-detection" content="telephone=no" />
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-   <link type="text/css" rel="stylesheet" href="/css/base.css" />
-   <link rel="stylesheet" type="text/css" href="/css/purchase.base.2012.css" />
-   <link rel="stylesheet" type="text/css" href="/css/purchase.sop.css" />
+   <link type="text/css" rel="stylesheet" href="http://static.korat.com/css/base.css" />
+   <link rel="stylesheet" type="text/css" href="http://static.korat.com/css/purchase.base.2012.css" />
+   <link rel="stylesheet" type="text/css" href="http://static.korat.com/css/purchase.sop.css" />
    <title>订单成功页面 - KORAT商城</title>
-   <script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
-   <script type="text/javascript" src="/js/base-2011.js" charset="utf-8"></script>
-   <script type="text/javascript" src="/js/jquery.cookie.js" charset="utf-8"></script>
-   <script type="text/javascript" src="/js/korat.js" charset="utf-8"></script>
+   <script type="text/javascript" src="http://static.korat.com/js/jquery-1.2.6.min.js"></script>
+   <script type="text/javascript" src="http://static.korat.com/js/base-2011.js" charset="utf-8"></script>
+   <script type="text/javascript" src="http://static.korat.com/js/jquery.cookie.js" charset="utf-8"></script>
+   <script type="text/javascript" src="http://static.korat.com/js/korat.js" charset="utf-8"></script>
 </head> <body id="mainframe">
 <!--shortcut start-->
 <jsp:include page="../commons/shortcut.jsp" />
 <!--shortcut end-->
 <div class="w" id="headers">
-		<div id="logo"><a href="http://www.jd.com/"><img alt="KORAT商城" src="/images/korat-logo.gif"></a></div>
+		<div id="logo"><a href="http://www.jd.com/"><img alt="KORAT商城" src="http://static.korat.com/images/korat-logo.gif"></a></div>
 		<ul class="step" id="step3">
 			<li class="fore1">1.我的购物车<b></b></li>
 			<li class="fore2">2.填写核对订单信息<b></b></li>

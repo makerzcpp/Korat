@@ -8,6 +8,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.korat.common.bean.ItemCatResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -212,5 +214,4 @@ public final class CookieUtils {
 		}
 		return domainName;
 	}
-
 }

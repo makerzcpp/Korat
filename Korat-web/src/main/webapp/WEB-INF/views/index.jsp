@@ -279,7 +279,7 @@ pageConfig.DATA_MScroll =[
 <span clstag="homepage|keycount|home2013|18b">
 <!-- 广告信息 -->
 	<a target="_blank" title="" href="http://c.fa.jd.com/adclick?sid=2&cid=601&aid=3624&bid=0&unit=35989&advid=105087&guv=&url=http://sale.jd.com/act/PzKvRu4Ld5YnG1Ej.html">
-		<img data-img="2" data-lazyload="/images/543b4d75N686689d7.jpg" width="209" height="155" alt="" />
+		<img data-img="2" data-lazyload="http://static.korat.com/images/543b4d75N686689d7.jpg" width="209" height="155" alt="" />
 	</a>
 </span>
 </div>

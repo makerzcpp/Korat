@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<script type="text/javascript" src="/js/base-v1.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://static.korat.com/js/base-v1.js" charset="utf-8"></script>
 <!--shortcut start-->
 <jsp:include page="../commons/shortcut.jsp" />
 <!--shortcut end-->
 <div id="o-header-2013">
 	<div class="w" id="header-2013">
-		<div id="logo-2013" class="ld"><a href="http://www.korat.com/" hidefocus="true" clstag="homepage|keycount|home2013|02a"><b></b><img src="/images/justice.gif" width="270" height="60" alt="KORAT"></a></div>
+		<div id="logo-2013" class="ld"><a href="http://www.korat.com/" hidefocus="true" clstag="homepage|keycount|home2013|02a"><b></b><img src="http://static.korat.com/images/justice.gif" width="270" height="60" alt="KORAT"></a></div>
 		<!--logo end-->
 		<div id="search-2013">
 			<div class="i-search ld">

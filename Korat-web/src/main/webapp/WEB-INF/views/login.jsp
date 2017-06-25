@@ -5,10 +5,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
     <title>登录KORAT</title>
-    <link type="text/css" rel="stylesheet" href="/css/login.css"/>
-    <script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
-    <script type="text/javascript" src="/js/login/g.base.js"></script>
-   	<script type="text/javascript" src="/js/login/jdEdit.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://static.korat.com/css/login.css"/>
+    <script type="text/javascript" src="http://static.korat.com/js/jquery-1.2.6.min.js"></script>
+    <script type="text/javascript" src="http://static.korat.com/js/login/g.base.js"></script>
+   	<script type="text/javascript" src="http://static.korat.com/js/login/jdEdit.js"></script>
     <script type="text/javascript">
         var pgeditor = new jQuery.pge({
             pgePath: "#",

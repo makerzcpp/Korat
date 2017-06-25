@@ -14,12 +14,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>订单结算页 -KORAT商城</title>
 	<!--结算页面样式-->	
-	<link rel="stylesheet" type="text/css" href="/css/base.css" media="all" />
-    <link type="text/css" rel="stylesheet"  href="/css/order-commons.css" source="widget"/>	
-	<script type="text/javascript" src="/js/jquery-1.6.4.js"></script>
-	<script type="text/javascript" src="/js/base.js"></script>	
-	<script type="text/javascript" src="/js/order.common.js"></script>
-	<script type="text/javascript" src="/js/jquery.checkout.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://static.korat.com/css/base.css" media="all" />
+    <link type="text/css" rel="stylesheet"  href="http://static.korat.com/css/order-commons.css" source="widget"/>
+	<script type="text/javascript" src="http://static.korat.com/js/jquery-1.6.4.js"></script>
+	<script type="text/javascript" src="http://static.korat.com/js/base.js"></script>
+	<script type="text/javascript" src="http://static.korat.com/js/order.common.js"></script>
+	<script type="text/javascript" src="http://static.korat.com/js/jquery.checkout.js"></script>
 </head>	<body id="mainframe">
 <jsp:include page="../commons/shortcut.jsp" />
 <!--shortcut end-->

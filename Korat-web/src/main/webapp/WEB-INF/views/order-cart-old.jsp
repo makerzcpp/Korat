@@ -14,13 +14,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>订单结算页 -KORAT商城</title>
 	<!--结算页面样式-->
-    <link type="text/css" rel="stylesheet" href="/css/base.css" />
-    <link type="text/css" rel="stylesheet" href="/css/purchase.checkout.css" />
-	<script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
-	<script type="text/javascript" src="/js/jquery.checkout.js"></script>
-	<script type="text/javascript" src="/js/base-v1.js"></script>
-	<script type="text/javascript" src="/js/order.common.js"></script>
-	<script type="text/javascript" src="/js/korat.js" charset="utf-8"></script>
+    <link type="text/css" rel="stylesheet" href="http://static.korat.com/css/base.css" />
+    <link type="text/css" rel="stylesheet" href="http://static.korat.com/css/purchase.checkout.css" />
+	<script type="text/javascript" src="http://static.korat.com/js/jquery-1.2.6.min.js"></script>
+	<script type="text/javascript" src="http://static.korat.com/js/jquery.checkout.js"></script>
+	<script type="text/javascript" src="http://static.korat.com/js/base-v1.js"></script>
+	<script type="text/javascript" src="http://static.korat.com/js/order.common.js"></script>
+	<script type="text/javascript" src="http://static.korat.com/js/korat.js" charset="utf-8"></script>
 </head>
 <body id="mainframe">
 <!--shortcut start-->
@@ -309,11 +309,11 @@
     <jsp:include page="../commons/footer-links.jsp"></jsp:include>
     <!-- links end -->
 </div><!-- footer end -->
-	<script type="text/javascript" src="/js/order.js"></script>
-	<script type="text/javascript" src="/js/base-2011.js"></script>
-    <script type="text/javascript" src="/js/lib-v1.js"></script>
-    <script type="text/javascript" src="/js/jTips.js"></script>
-    <script type="text/javascript" src="/js/calendar.js"></script>
+	<script type="text/javascript" src="http://static.korat.com/js/order.js"></script>
+	<script type="text/javascript" src="http://static.korat.com/js/base-2011.js"></script>
+    <script type="text/javascript" src="http://static.korat.com/js/lib-v1.js"></script>
+    <script type="text/javascript" src="http://static.korat.com/js/jTips.js"></script>
+    <script type="text/javascript" src="http://static.korat.com/js/calendar.js"></script>
 	<script type="text/javascript">
 		
 	$('#bill-tip-btn').Jtips({//随点随帮tip弹出

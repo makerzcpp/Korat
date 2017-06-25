@@ -8,9 +8,9 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
     <title>注册-个人用户</title>
-    <link type="text/css" rel="stylesheet" href="/css/regist.personal.css"/>
-    <link type="text/css" rel="stylesheet" href="/css/passport.base.css"/>
-    <script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://static.korat.com/css/regist.personal.css"/>
+    <link type="text/css" rel="stylesheet" href="http://static.korat.com/css/passport.base.css"/>
+    <script type="text/javascript" src="http://static.korat.com/js/jquery-1.2.6.min.js"></script>
 </head>
 <body>
     <script type="text/javascript">
