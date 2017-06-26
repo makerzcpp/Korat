@@ -169,7 +169,7 @@ pageConfig.DATA_MScroll =[
         x = pageConfig.FN_GetCompatibleData(a[i]);
         e.push("<li class=\"item\"><a href=\"");
         e.push(x.href);
-        e.push("\"><img src=\"/images/blank.gif\" style=\"background:url(");
+//        e.push("\"><img src=\"http://static.korat.com/images/blank.gif\" style=\"background:url(");
         e.push(x.src);
         e.push(") no-repeat #fff center 0;\" alt=\"");
         e.push(x.alt);

@@ -1014,3 +1014,6 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 're
 2017-06-25 10:38:29 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
 2017-06-25 10:46:15 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
 2017-06-25 10:53:50 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
+2017-06-26 15:32:24 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
+2017-06-26 22:15:57 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
+2017-06-26 23:45:43 [ WARN ] [ DispatcherServlet.java :1120(noHandlerFound)]  No mapping found for HTTP request with URI [/cart/add/6.html] in DispatcherServlet with name 'springmvc'

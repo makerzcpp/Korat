@@ -10,13 +10,13 @@
 <title>我的订单 - KORAT</title>
 <meta name="Keywords" content="java,KORATjava" />
 <meta name="description" content="在KORAT中找到了29910件java的类似商品，其中包含了“图书”，“电子书”，“教育音像”，“骑行运动”等类型的java的商品。" />
-<link rel="stylesheet" type="text/css" href="/css/base.css" media="all" />
-<link rel="stylesheet" type="text/css" href="/css/myjd.common.css" media="all" />
-<link rel="stylesheet" type="text/css" href="/css/myjd.commentImg.css" media="all" />
-<script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://static.korat.com/css/base.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://static.korat.com/css/myjd.common.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://static.korat.com/css/myjd.commentImg.css" media="all" />
+<script type="text/javascript" src="http://static.korat.com/js/jquery-1.2.6.min.js"></script>
 </head>
 <body>
-<script type="text/javascript" src="/js/base-2011.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://static.korat.com/js/base-2011.js" charset="utf-8"></script>
 <!-- header start -->
 <jsp:include page="../commons/header.jsp" />
 <!-- header end -->

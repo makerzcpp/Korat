@@ -17,7 +17,7 @@
   position: relative;
 }
 .panel-title {
-  background: url('images/blank.gif') no-repeat;
+  background: url('http://static.korat.com/images/blank.gif') no-repeat;
 }
 .panel-header-noborder {
   border-width: 0 0 1px 0;

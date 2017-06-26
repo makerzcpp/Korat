@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/Korat-manage/Korat-manage-web" />
+    <file type="web" url="file://$PROJECT_DIR$/korat-order" />
     <file type="web" url="file://$PROJECT_DIR$/korat-sso" />
     <file type="web" url="file://$PROJECT_DIR$/Korat-web" />
   </component>
@@ -13,6 +14,7 @@
         <option value="$PROJECT_DIR$/Korat-manage/pom.xml" />
         <option value="$PROJECT_DIR$/Korat-web/pom.xml" />
         <option value="$PROJECT_DIR$/korat-sso/pom.xml" />
+        <option value="$PROJECT_DIR$/korat-order/pom.xml" />
       </list>
     </option>
   </component>

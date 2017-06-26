@@ -60,7 +60,7 @@
 </div>
   <div class="w">
 	<!-- links start -->
-    <jsp:include page="../commons/footer-links.jsp"></jsp:include>
+    <jsp:include page="../commons/footer-links.jsp"/>
     <!-- links end -->
 </div><!-- footer end -->
      </body> 

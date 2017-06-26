@@ -163,4 +163,23 @@ public class UserController {
         }
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
     }
+
+    /**
+     * 从redis中找到用户信息
+     * @param token
+     * @return
+     */
+    @RequestMapping(value = "/query/{token}", method = RequestMethod.GET)
+    public ResponseEntity<User> queryUserName(@PathVariable("token") String token) {
+        try {
+            User user = loginService.queryUserRedis(token);
+            if (user != null) {
+                return ResponseEntity.status(HttpStatus.OK).body(user);
+            }
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+    }
 }

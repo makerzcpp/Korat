@@ -186,9 +186,9 @@
     <jsp:include page="../commons/footer-links.jsp"></jsp:include>
     <!-- links end -->
 </div>
-<script type="text/javascript" src="/js/login/login.js"></script>
-<script type="text/javascript" src="/js/login/jdThickBox.js"></script>
-<script type="text/javascript" src="/js/login/checkClient.js"></script>
+<script type="text/javascript" src="http://static.korat.com/js/login/login.js"></script>
+<script type="text/javascript" src="http://static.korat.com/js/login/jdThickBox.js"></script>
+<script type="text/javascript" src="http://static.korat.com/js/login/checkClient.js"></script>
 <script>
    $("#jdsafe").hover(function () {
        $("#tip-safe").show();

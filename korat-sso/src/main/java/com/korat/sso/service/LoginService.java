@@ -9,6 +9,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.Objects;
 
 /**
@@ -43,5 +44,25 @@ public class LoginService {
         redisService.set("Token_" + token, objectMapper.writeValueAsString(user), 60 * 30);
 
         return token;
+    }
+
+    /**
+     * 从redis中找到用户信息
+     * @param token
+     * @return
+     */
+    public User queryUserRedis(String token) {
+        String key="TOKEN_"+token;
+        String result = redisService.get(key);
+        if (result != null) {
+            try {
+                User user = objectMapper.readValue(result, User.class);
+                this.redisService.expirt(result, 60 * 30);
+                return user;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 }

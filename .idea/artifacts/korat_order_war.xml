@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="korat-order:war">
+    <output-path>$PROJECT_DIR$/korat-order/target</output-path>
+    <root id="archive" name="korat-order.war">
+      <element id="artifact" artifact-name="korat-order:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -11,6 +11,7 @@
         <module name="Korat-manage-pojo" />
         <module name="Korat-manage-service" />
         <module name="Korat-manage-web" />
+        <module name="korat-order" />
         <module name="korat-sso" />
         <module name="Korat-web" />
         <module name="Koratcommon" />
@@ -24,6 +25,7 @@
       <module name="Korat-manage-pojo" target="1.8" />
       <module name="Korat-manage-service" target="1.8" />
       <module name="Korat-manage-web" target="1.8" />
+      <module name="korat-order" target="1.8" />
       <module name="korat-sso" target="1.8" />
       <module name="Korat-web" target="1.8" />
       <module name="Koratcommon" target="1.8" />

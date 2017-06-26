@@ -12,6 +12,7 @@
         <module>Korat-manage</module>
         <module>Korat-web</module>
         <module>korat-sso</module>
+        <module>korat-order</module>
     </modules>
     <packaging>pom</packaging>
 
