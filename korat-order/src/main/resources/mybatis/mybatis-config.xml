@@ -25,5 +25,8 @@
 			<property name="dialectClass" value="com.github.miemiedev.mybatis.paginator.dialect.MySQLDialect"/>
 		</plugin>
 	</plugins>
-	
+
+	<mappers>
+		<package name="mybatis.mappers"/>
+	</mappers>
 </configuration>

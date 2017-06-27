@@ -1,4 +1,4 @@
-package com.korat.web.httpclient;
+package com.korat.common.httpclient;
 
 /**
  * post请求返回的结果
@@ -7,8 +7,8 @@ package com.korat.web.httpclient;
  * @date 2017/6/19
  */
 public class HttpResult {
-    Integer code;
-    String data;
+    private Integer code;
+    private String data;
 
     public Integer getCode() {
         return code;
@@ -30,7 +30,6 @@ public class HttpResult {
         this.code = code;
         this.data = data;
     }
-
     public HttpResult() {
 
     }

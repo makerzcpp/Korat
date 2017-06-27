@@ -10,7 +10,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>groupId</groupId>
     <artifactId>korat-order</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
@@ -173,6 +172,14 @@
                 <configuration>
                     <port>8085</port>
                     <path>/</path>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <!--把class打包爲jar作爲附件-->
+                    <attachClasses>true</attachClasses>
                 </configuration>
             </plugin>
         </plugins>

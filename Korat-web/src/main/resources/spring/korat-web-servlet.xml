@@ -7,9 +7,15 @@
 
     <!--注解扫描-->
     <mvc:annotation-driven/>
-
-
     <context:component-scan base-package="com.korat.web.controller"/>
+
+    <!--登录拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/order/**"/>
+            <bean class="com.korat.web.interceptor.UserLoginHandlerInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>

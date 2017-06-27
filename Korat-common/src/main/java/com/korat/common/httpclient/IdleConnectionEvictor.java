@@ -24,10 +24,9 @@
  * <http://www.apache.org/>.
  *
  */
-package com.korat.web.httpclient;
+package com.korat.common.httpclient;
 
 import org.apache.http.conn.HttpClientConnectionManager;
-import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
 public class IdleConnectionEvictor extends Thread {
 

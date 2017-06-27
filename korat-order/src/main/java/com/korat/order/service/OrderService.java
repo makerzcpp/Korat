@@ -1,7 +1,12 @@
 package com.korat.order.service;
 
+import java.io.IOException;
 import java.util.Date;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.korat.common.httpclient.HttpResult;
+import com.korat.common.service.ApiService;
 import com.korat.order.bean.KoratResult;
 import com.korat.order.dao.IOrder;
 import com.korat.order.pojo.Order;
@@ -9,6 +14,7 @@ import com.korat.order.pojo.PageResult;
 import com.korat.order.pojo.ResultMsg;
 import com.korat.order.util.ValidateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,10 +23,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class OrderService {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
-
+    @Value("${KORAT_ORDER_URL}")
+    private String KORAT_ORDER_URL;
     @Autowired
     private IOrder orderDao;
-    
+    @Autowired
+    private ApiService apiService;
+
 //    @Autowired
 //    private RabbitTemplate rabbitTemplate;
 
@@ -51,7 +60,7 @@ public class OrderService {
 
             // 持久化order对象
             orderDao.createOrder(order);
-            
+
             //发送消息到RabbitMQ
 //            Map<String, Object> msg = new HashMap<String, Object>(3);
 //            msg.put("userId", order.getUserId());
@@ -62,7 +71,7 @@ public class OrderService {
 //            }
 //            msg.put("itemIds", itemIds);
 //            this.rabbitTemplate.convertAndSend(objectMapper.writeValueAsString(msg));
-            
+
             return KoratResult.ok(orderId);
         } catch (Exception e) {
             e.printStackTrace();
@@ -90,4 +99,29 @@ public class OrderService {
         return this.orderDao.changeOrderStatus(order);
     }
 
+    /**
+     * 提交訂單
+     *
+     * @param order
+     * @return
+     */
+    public String submitOrder(Order order) {
+        if (order == null) {
+            return null;
+        }
+        String url = KORAT_ORDER_URL + "/order/create";
+        try {
+            HttpResult httpResult = apiService.doPostJson(url, objectMapper.writeValueAsString(order));
+            if (httpResult.getCode() == 200) {
+                String data = httpResult.getData();
+                JsonNode jsonNode = objectMapper.readTree(data);
+                if (jsonNode.get("status").intValue() == 200) {
+                    return jsonNode.get("data").asText();
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

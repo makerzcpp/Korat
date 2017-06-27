@@ -6,7 +6,13 @@
 
     <context:component-scan base-package="com.korat.common"/>
 
-
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:httpclient.properties</value>
+            </list>
+        </property>
+    </bean>
 
     <!--定义连接管理器-->
     <bean id="httpClientConnectionManager" class="org.apache.http.impl.conn.PoolingHttpClientConnectionManager">

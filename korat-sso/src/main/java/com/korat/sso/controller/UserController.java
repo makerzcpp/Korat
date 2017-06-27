@@ -6,6 +6,7 @@ import com.korat.sso.service.UserService;
 import com.korat.sso.utils.CookieUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -39,7 +40,8 @@ public class UserController {
     @Autowired
     private LoginService loginService;
 
-    private final String COOKIE_NAME = "KORAT_TOKEN";
+    @Value("${COOKIE_NAME}")
+    private String COOKIE_NAME;
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String toLogin() {
         return "login";

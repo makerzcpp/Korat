@@ -1,6 +1,6 @@
-package com.korat.web.service;
+package com.korat.common.service;
 
-import com.korat.web.httpclient.HttpResult;
+import com.korat.common.httpclient.HttpResult;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -8,6 +8,7 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
@@ -18,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
@@ -137,6 +139,40 @@ public class ApiService implements BeanFactoryAware {
         return null;
     }
 
+    /**
+     * 參數爲json的post方法
+     * @param url
+     * @param json
+     * @return
+     */
+    public HttpResult doPostJson(String url, String json) {
+        HttpPost httpPost = new HttpPost(url);
+        httpPost.setConfig(requestConfig);
+        if (json != null) {
+            try {
+                StringEntity stringEntity=new StringEntity(json);
+                httpPost.setEntity(stringEntity);
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        CloseableHttpResponse response=null;
+        try {
+            response = getClient().execute(httpPost);
+            return new HttpResult(response.getStatusLine().getStatusCode(), EntityUtils.toString(response.getEntity(), "utf-8"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if (response != null) {
+                try {
+                    response.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
+    }
     private CloseableHttpClient getClient() {
         return beanFactory.getBean(CloseableHttpClient.class);
     }
@@ -145,4 +181,6 @@ public class ApiService implements BeanFactoryAware {
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         this.beanFactory = beanFactory;
     }
+
+
 }

@@ -41,7 +41,7 @@ public class LoginService {
         String token = DigestUtils.md5Hex(System.currentTimeMillis() + userName);
 
     //    将token保存到redis中
-        redisService.set("Token_" + token, objectMapper.writeValueAsString(user), 60 * 30);
+        redisService.set("TOKEN_" + token, objectMapper.writeValueAsString(user), 60 * 30);
 
         return token;
     }
@@ -52,8 +52,7 @@ public class LoginService {
      * @return
      */
     public User queryUserRedis(String token) {
-        String key="TOKEN_"+token;
-        String result = redisService.get(key);
+        String result = redisService.get(token);
         if (result != null) {
             try {
                 User user = objectMapper.readValue(result, User.class);
