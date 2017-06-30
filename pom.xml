@@ -13,6 +13,7 @@
         <module>Korat-web</module>
         <module>korat-sso</module>
         <module>korat-order</module>
+        <module>korat-search</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -81,6 +82,7 @@
                 <artifactId>spring-aspects</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+
 
             <!-- Mybatis -->
             <dependency>

@@ -39,7 +39,7 @@ public class ItemController {
      * @return
      */
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Void> saveItem(Item item, @RequestParam("desc") String desc,@RequestParam("itemParams")String itemParams) {
+    public ResponseEntity<Void> saveItem(Item item, @RequestParam("desc") String desc, @RequestParam("itemParams")String itemParams) {
         try {
             if (StringUtils.isBlank(item.getTitle())) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
@@ -104,7 +104,7 @@ public class ItemController {
      * @return
      */
     @RequestMapping(method = RequestMethod.PUT)
-    public ResponseEntity<Void> updateItem(Item item, @RequestParam("desc") String desc,@RequestParam("itemParams")String itemParams) {
+    public ResponseEntity<Void> updateItem(Item item, @RequestParam("desc") String desc, @RequestParam("itemParams")String itemParams) {
         try {
             //    判断参数是否正确
             if (StringUtils.isEmpty(item.getTitle()) || StringUtils.length(item.getTitle()) > 100) {

@@ -199,10 +199,10 @@ function addToFavorite() {
                         </div>
 						                    </div>
 					<!-- 
-                    <div id="mobileCodeDiv" class="item hide" style="height: 62px;">
+                    <div id="mobileCodeDiv" claitem2item hide" style="height: 62px;">
                         <span class="label"><b class="ftx04">*</b>短信验证码：</span>
 
-                        <div class="fl item-ifo">
+                        <div class=item2item-ifo">
                             <input type="text" maxlength="6" autocomplete="off" tabindex="6" class="text text-1"
                                    name="mobileCode"
                                    style="ime-mode:disabled" id="mobileCode" onblur="mobileCodeBlur()"

@@ -154,7 +154,7 @@
 				<a href="javascript:;" class="spec-control" id="spec-backward"></a>
 				<div class="spec-items">
 					<ul class="lh">   
-						<c:forEach items="${item.images}" var="pic" varStatus="status">  
+						<c:forEach items="${item.images}" var="pic" varStatus="status">
 							<c:choose>
 								<c:when test="${status.index == 0 }">
 									<li>

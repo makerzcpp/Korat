@@ -109,7 +109,7 @@ public class OrderService {
         if (order == null) {
             return null;
         }
-        String url = KORAT_ORDER_URL + "/order/create";
+        String url = KORAT_ORDER_URL + "/service/order/create";
         try {
             HttpResult httpResult = apiService.doPostJson(url, objectMapper.writeValueAsString(order));
             if (httpResult.getCode() == 200) {

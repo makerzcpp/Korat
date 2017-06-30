@@ -2,7 +2,6 @@ package com.korat.manage.service;
 
 import com.korat.manage.domain.Item;
 import com.korat.manage.domain.ItemDesc;
-import com.korat.manage.domain.ItemParam;
 import com.korat.manage.domain.ItemParamItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

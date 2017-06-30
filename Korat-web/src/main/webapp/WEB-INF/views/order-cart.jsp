@@ -600,7 +600,7 @@ $('.online-payment')
 		  <div class="date-thickbox" id="delivery-tab-311">
 				<div class="tab-nav">
 					<ul>
-						<li class="tab-nav-item tab-item-selected" id="li_311_id" onclick="doSwith311Tab('311')"> 指定时间 <b> </b> </li> 
+						<li class="tab-nav-item tab-item-selected" id="li_311_id" onclick="doSwith311Tab('311')"> 指定时间 <b> </b> </li>
 						<li class="tab-nav-item" id="li_411_id" onclick="doSwith311Tab('411')"> 极速达 <b> </b> </li>
 						
 					</ul>

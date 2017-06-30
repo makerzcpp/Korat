@@ -1,6 +1,5 @@
 package com.korat.web.controller;
 
-import com.korat.manage.domain.ItemDesc;
 import com.korat.web.bean.Item;
 import com.korat.web.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
