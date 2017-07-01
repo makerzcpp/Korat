@@ -48,6 +48,11 @@
           <element id="archive" name="Korat-manage-pojo-1.0-SNAPSHOT.jar">
             <element id="module-output" name="Korat-manage-pojo" />
           </element>
+          <element id="library" level="project" name="Maven: com.rabbitmq:amqp-client:3.4.1" />
+          <element id="library" level="project" name="Maven: org.springframework.amqp:spring-rabbit:1.4.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.amqp:spring-amqp:1.4.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-messaging:4.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.retry:spring-retry:1.1.2.RELEASE" />
           <element id="library" level="project" name="Maven: joda-time:joda-time:2.5" />
           <element id="archive" name="Korat-common-1.0-SNAPSHOT.jar">
             <element id="module-output" name="Korat-common" />
