@@ -1,40 +1,5 @@
-2017-06-29 15:42:35 [ ERROR ] [ FrameworkServlet.java :497(initServletBean)] Context initialization failed
-org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [spring/koat-search-servlet.xml]; nested exception is java.io.FileNotFoundException: class path resource [spring/koat-search-servlet.xml] cannot be opened because it does not exist
-	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
-	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
-	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
-	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
-	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
-	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
-	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
-	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
-	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:452)
-	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:663)
-	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:629)
-	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:677)
-	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:548)
-	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:489)
-	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
-	at javax.servlet.GenericServlet.init(GenericServlet.java:160)
-	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280)
-	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193)
-	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1088)
-	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5176)
-	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5460)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.io.FileNotFoundException: class path resource [spring/koat-search-servlet.xml] cannot be opened because it does not exist
-	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
-	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
-	... 28 more
-2017-06-29 19:51:06 [ ERROR ] [ ContextLoader.java :331(initWebApplicationContext)] Context initialization failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'search': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.korat.search.service.SearchService com.korat.search.controller.SearchController.searchService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.apache.solr.client.solrj.impl.HttpSolrServer com.korat.search.service.SearchService.httpSolrServer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.solr.client.solrj.impl.HttpSolrServer#0' defined in file [D:\project\Korat\korat-search\target\classes\spring\applicationContext.xml]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.impl.HttpSolrServer]: Constructor threw exception; nested exception is java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
+2017-07-04 22:35:33 [ ERROR ] [ ContextLoader.java :331(initWebApplicationContext)] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cartController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.korat.cart.service.CartService com.korat.cart.controller.CartController.cartService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cartService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.korat.cart.service.ItemService com.korat.cart.service.CartService.itemService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'CART_ITEMSERVICE': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.lang.String com.korat.cart.service.ItemService.KORAT_MANAGE_ITEM_URL; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'KORAT_MANAGE_ITEM_URL' in string value "${KORAT_MANAGE_ITEM_URL}"
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
@@ -58,12 +23,12 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.korat.search.service.SearchService com.korat.search.controller.SearchController.searchService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.apache.solr.client.solrj.impl.HttpSolrServer com.korat.search.service.SearchService.httpSolrServer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.solr.client.solrj.impl.HttpSolrServer#0' defined in file [D:\project\Korat\korat-search\target\classes\spring\applicationContext.xml]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.impl.HttpSolrServer]: Constructor threw exception; nested exception is java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.korat.cart.service.CartService com.korat.cart.controller.CartController.cartService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cartService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.korat.cart.service.ItemService com.korat.cart.service.CartService.itemService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'CART_ITEMSERVICE': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.lang.String com.korat.cart.service.ItemService.KORAT_MANAGE_ITEM_URL; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'KORAT_MANAGE_ITEM_URL' in string value "${KORAT_MANAGE_ITEM_URL}"
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:558)
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
 	... 22 more
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.apache.solr.client.solrj.impl.HttpSolrServer com.korat.search.service.SearchService.httpSolrServer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.solr.client.solrj.impl.HttpSolrServer#0' defined in file [D:\project\Korat\korat-search\target\classes\spring\applicationContext.xml]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.impl.HttpSolrServer]: Constructor threw exception; nested exception is java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cartService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.korat.cart.service.ItemService com.korat.cart.service.CartService.itemService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'CART_ITEMSERVICE': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.lang.String com.korat.cart.service.ItemService.KORAT_MANAGE_ITEM_URL; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'KORAT_MANAGE_ITEM_URL' in string value "${KORAT_MANAGE_ITEM_URL}"
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
@@ -77,71 +42,12 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:530)
 	... 24 more
-Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.apache.solr.client.solrj.impl.HttpSolrServer com.korat.search.service.SearchService.httpSolrServer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.solr.client.solrj.impl.HttpSolrServer#0' defined in file [D:\project\Korat\korat-search\target\classes\spring\applicationContext.xml]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.impl.HttpSolrServer]: Constructor threw exception; nested exception is java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.korat.cart.service.ItemService com.korat.cart.service.CartService.itemService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'CART_ITEMSERVICE': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.lang.String com.korat.cart.service.ItemService.KORAT_MANAGE_ITEM_URL; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'KORAT_MANAGE_ITEM_URL' in string value "${KORAT_MANAGE_ITEM_URL}"
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:558)
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
 	... 35 more
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.solr.client.solrj.impl.HttpSolrServer#0' defined in file [D:\project\Korat\korat-search\target\classes\spring\applicationContext.xml]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.impl.HttpSolrServer]: Constructor threw exception; nested exception is java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:278)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1131)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1034)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1127)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1051)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:530)
-	... 37 more
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.impl.HttpSolrServer]: Constructor threw exception; nested exception is java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:270)
-	... 49 more
-Caused by: java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
-	at org.apache.solr.client.solrj.impl.HttpSolrServer.<init>(HttpSolrServer.java:154)
-	at org.apache.solr.client.solrj.impl.HttpSolrServer.<init>(HttpSolrServer.java:141)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:147)
-	... 51 more
-2017-06-30 09:49:37 [ ERROR ] [ ContextLoader.java :331(initWebApplicationContext)] Context initialization failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'search': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.korat.search.service.SearchService com.korat.search.controller.SearchController.searchService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.apache.solr.client.solrj.impl.HttpSolrServer com.korat.search.service.SearchService.httpSolrServer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.solr.client.solrj.impl.HttpSolrServer#0' defined in file [D:\project\Korat\korat-search\target\classes\spring\applicationContext.xml]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.impl.HttpSolrServer]: Constructor threw exception; nested exception is java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:762)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
-	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
-	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
-	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
-	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
-	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
-	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.korat.search.service.SearchService com.korat.search.controller.SearchController.searchService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.apache.solr.client.solrj.impl.HttpSolrServer com.korat.search.service.SearchService.httpSolrServer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.solr.client.solrj.impl.HttpSolrServer#0' defined in file [D:\project\Korat\korat-search\target\classes\spring\applicationContext.xml]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.impl.HttpSolrServer]: Constructor threw exception; nested exception is java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:558)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
-	... 22 more
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'searchService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.apache.solr.client.solrj.impl.HttpSolrServer com.korat.search.service.SearchService.httpSolrServer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.solr.client.solrj.impl.HttpSolrServer#0' defined in file [D:\project\Korat\korat-search\target\classes\spring\applicationContext.xml]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.impl.HttpSolrServer]: Constructor threw exception; nested exception is java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'CART_ITEMSERVICE': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.lang.String com.korat.cart.service.ItemService.KORAT_MANAGE_ITEM_URL; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'KORAT_MANAGE_ITEM_URL' in string value "${KORAT_MANAGE_ITEM_URL}"
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
@@ -154,39 +60,19 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1051)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:530)
-	... 24 more
-Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.apache.solr.client.solrj.impl.HttpSolrServer com.korat.search.service.SearchService.httpSolrServer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.solr.client.solrj.impl.HttpSolrServer#0' defined in file [D:\project\Korat\korat-search\target\classes\spring\applicationContext.xml]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.impl.HttpSolrServer]: Constructor threw exception; nested exception is java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
+	... 37 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private java.lang.String com.korat.cart.service.ItemService.KORAT_MANAGE_ITEM_URL; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'KORAT_MANAGE_ITEM_URL' in string value "${KORAT_MANAGE_ITEM_URL}"
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:558)
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
-	... 35 more
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.solr.client.solrj.impl.HttpSolrServer#0' defined in file [D:\project\Korat\korat-search\target\classes\spring\applicationContext.xml]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.impl.HttpSolrServer]: Constructor threw exception; nested exception is java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:278)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1131)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1034)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1127)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1051)
+	... 48 more
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'KORAT_MANAGE_ITEM_URL' in string value "${KORAT_MANAGE_ITEM_URL}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.beans.factory.config.PropertyPlaceholderConfigurer$PlaceholderResolvingStringValueResolver.resolveStringValue(PropertyPlaceholderConfigurer.java:259)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:800)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:962)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:530)
-	... 37 more
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.impl.HttpSolrServer]: Constructor threw exception; nested exception is java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:163)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:270)
-	... 49 more
-Caused by: java.lang.RuntimeException: Invalid base url for solrj.  The base URL must not contain parameters: http://manage.korat.com?
-	at org.apache.solr.client.solrj.impl.HttpSolrServer.<init>(HttpSolrServer.java:154)
-	at org.apache.solr.client.solrj.impl.HttpSolrServer.<init>(HttpSolrServer.java:141)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:147)
-	... 51 more
-2017-06-30 14:36:02 [ ERROR ] [ DruidDataSource.java :401(init)] mysql should not use 'PoolPreparedStatements'
+	... 50 more
+2017-07-04 22:38:50 [ ERROR ] [ DruidDataSource.java :401(init)] mysql should not use 'PoolPreparedStatements'

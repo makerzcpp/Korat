@@ -48,12 +48,6 @@
     <orderEntry type="module" module-name="Korat-common" />
     <orderEntry type="library" name="Maven: redis.clients:jedis:2.9.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.4.2" level="project" />
-    <orderEntry type="library" name="Maven: com.rabbitmq:amqp-client:3.4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.amqp:spring-rabbit:1.4.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.amqp:spring-amqp:1.4.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-messaging:4.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.retry:spring-retry:1.1.2.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.1.2.RELEASE" level="project" />
     <orderEntry type="module" module-name="korat-order" />
     <orderEntry type="module" module-name="korat-order" scope="PROVIDED" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework:spring-jdbc:4.1.3.RELEASE" level="project" />
@@ -75,6 +69,13 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: joda-time:joda-time:2.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.alibaba.druid:druid-wrapper:0.2.9" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.alibaba:druid:0.2.9" level="project" />
+    <orderEntry type="library" name="Maven: com.rabbitmq:amqp-client:3.4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.amqp:spring-rabbit:1.4.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.amqp:spring-amqp:1.4.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-messaging:4.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.retry:spring-retry:1.1.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.1.2.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.10" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.1.3.RELEASE" level="project" />
@@ -83,7 +84,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-web:4.1.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.6.4" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.4" level="project" />
-    <orderEntry type="library" name="Maven: log4j:log4j:1.2.16" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.2" level="project" />

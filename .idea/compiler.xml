@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="korat-cart" />
         <module name="Korat-common" />
         <module name="Korat-manage-mapper" />
         <module name="Korat-manage-pojo" />
@@ -20,6 +21,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Korat" target="1.8" />
+      <module name="korat-cart" target="1.8" />
       <module name="Korat-common" target="1.8" />
       <module name="Korat-manage" target="1.8" />
       <module name="Korat-manage-mapper" target="1.8" />

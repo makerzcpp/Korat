@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.korat.manage.service"/>
+
+    <!--定义rabbitMQ的连接工厂-->
+    <rabbit:connection-factory id="connectionFactory"
+                               host="${rabbitmq.ip}"
+                               port="${rabbitmq.port}"
+                               username="${rabbitmq.username}"
+                               password="${rabbitmq.password}"
+                               virtual-host="${rabbitmq.virtual-host}"
+    />
+
+    <!--定义管理-->
+    <rabbit:admin connection-factory="connectionFactory"/>
+
+    <!--定义交换机-->
+    <rabbit:topic-exchange name="KORAT-ITEM-EXCHANGE" auto-declare="true" durable="true"/>
+
+    <!--定义模板-->
+    <rabbit:template id="koratItemTemplate" connection-factory="connectionFactory" exchange="KORAT-ITEM-EXCHANGE"/>
+</beans>

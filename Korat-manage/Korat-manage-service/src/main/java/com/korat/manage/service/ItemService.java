@@ -1,10 +1,17 @@
 package com.korat.manage.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.korat.manage.domain.Item;
 import com.korat.manage.domain.ItemDesc;
 import com.korat.manage.domain.ItemParamItem;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -19,6 +26,9 @@ public class ItemService extends BaseService<Item> {
     private ItemDescService itemDescService;
     @Autowired
     private ItemParamItemService itemParamItemService;
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+    private final static ObjectMapper objectMapper = new ObjectMapper();
 
     /**
      * 新增商品
@@ -67,7 +77,6 @@ public class ItemService extends BaseService<Item> {
      */
     public boolean updateItem(Item item, String desc, String itemParams) {
         item.setStatus(null);
-        item.setId(null);
 
         //    更新商品,通过主键更新不为null的字段
         Integer count1 = super.updateSelective(item);
@@ -78,16 +87,34 @@ public class ItemService extends BaseService<Item> {
 
         Integer count2 = this.itemDescService.updateSelective(itemDesc);
 
-        if (itemParams != null) {
+        if (StringUtils.isNotBlank(itemParams)) {
             ItemParamItem itemParamItem = new ItemParamItem();
             itemParamItem.setId(null);
             itemParamItem.setItemId(item.getCid());
             itemParamItem.setParamData(itemParams);
             Integer count3 = this.itemParamItemService.updateItemParamsByExample(itemParamItem);
-            return count1 == 1 && count2 == 1 && count3 == 1;
+            sendMessage(item.getId(),"update");
+            //return count1 == 1 && count2 == 1 && count3 == 1;
         }
+        sendMessage(item.getId(),"update");
         return count1 == 1 && count2 == 1;
     }
 
+    /**
+     * 发送消息
+     * @param itemId
+     * @param type
+     */
+    private void sendMessage(Long itemId, String type) {
+        Map<String, Object> msg = new HashMap<>();
+        msg.put("itemId", itemId);
+        msg.put("type", type);
+        msg.put("date", System.currentTimeMillis());
+        try {
+            rabbitTemplate.convertAndSend("item."+type,objectMapper.writeValueAsString(msg));
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

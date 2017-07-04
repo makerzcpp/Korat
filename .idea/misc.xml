@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/korat-cart" />
     <file type="web" url="file://$PROJECT_DIR$/Korat-manage/Korat-manage-web" />
     <file type="web" url="file://$PROJECT_DIR$/korat-order" />
     <file type="web" url="file://$PROJECT_DIR$/korat-search" />
@@ -17,6 +18,7 @@
         <option value="$PROJECT_DIR$/korat-sso/pom.xml" />
         <option value="$PROJECT_DIR$/korat-order/pom.xml" />
         <option value="$PROJECT_DIR$/korat-search/pom.xml" />
+        <option value="$PROJECT_DIR$/korat-cart/pom.xml" />
       </list>
     </option>
   </component>

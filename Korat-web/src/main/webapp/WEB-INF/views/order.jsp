@@ -292,7 +292,7 @@
 
                                     </div><!--@end div.order-summary-->
                                 </div>
-                            </div><!--@end div#order-cart-->
+                            </div><!--@end div#orCartcart-->
                         </div>
                         <!-- 验证码 -->
                         <div class="check-code group" id="checkCodeDiv"></div>

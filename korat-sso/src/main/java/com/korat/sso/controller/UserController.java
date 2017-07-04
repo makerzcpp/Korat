@@ -3,7 +3,7 @@ package com.korat.sso.controller;
 import com.korat.sso.domain.User;
 import com.korat.sso.service.LoginService;
 import com.korat.sso.service.UserService;
-import com.korat.sso.utils.CookieUtils;
+import com.korat.sso.util.CookieUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

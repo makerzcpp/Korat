@@ -2,7 +2,8 @@ package com.korat.web.interceptor;
 
 import com.korat.web.bean.User;
 import com.korat.web.service.UserService;
-import com.korat.web.utils.CookieUtils;
+import com.korat.web.util.CookieUtils;
+import com.korat.web.util.UserThreadLocal;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,7 +28,7 @@ public class UserLoginHandlerInterceptor implements HandlerInterceptor{
     private String KORAT_SSO_URL;
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-
+        UserThreadLocal.set(null);
         String token = CookieUtils.getCookieValue(httpServletRequest, COOKIE_NAME);
         if (StringUtils.isEmpty(token)) {
             httpServletResponse.sendRedirect(KORAT_SSO_URL +"/user/login.html");
@@ -38,6 +39,7 @@ public class UserLoginHandlerInterceptor implements HandlerInterceptor{
             httpServletResponse.sendRedirect(KORAT_SSO_URL +"/user/login.html");
             return false;
         }
+        UserThreadLocal.set(user);
         //登录成功
         return true;
     }
