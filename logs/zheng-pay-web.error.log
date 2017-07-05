@@ -76,3 +76,4 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'KO
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:530)
 	... 50 more
 2017-07-04 22:38:50 [ ERROR ] [ DruidDataSource.java :401(init)] mysql should not use 'PoolPreparedStatements'
+2017-07-05 23:53:04 [ ERROR ] [ DruidDataSource.java :401(init)] mysql should not use 'PoolPreparedStatements'

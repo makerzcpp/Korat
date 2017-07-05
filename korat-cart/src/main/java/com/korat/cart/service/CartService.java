@@ -70,4 +70,31 @@ public class CartService {
         example.createCriteria().andEqualTo("userId", user.getId());
         return this.cartMapper.selectByExample(example);
     }
+
+    /**
+     * 更新商品数量
+     * @param itemId
+     * @param num
+     */
+    public void updateItemNum(Long itemId, Integer num) {
+        Example example = new Example(Cart.class);
+        example.createCriteria().andEqualTo("userId", UserThreadLocal.get().getId())
+                .andEqualTo("itemId", itemId);
+        Cart cart=new Cart();
+        cart.setNum(num);
+        cart.setUpdated(new Date());
+        this.cartMapper.updateByExampleSelective(cart, example);
+    }
+
+    /**
+     * 删除购物车中的商品
+     *
+     * @param itemId
+     */
+    public void deleteItemFromCart(Long itemId) {
+        Example example = new Example(Cart.class);
+        example.createCriteria().andEqualTo("userId", UserThreadLocal.get().getId())
+                .andEqualTo("itemId", itemId);
+        this.cartMapper.deleteByExample(example);
+    }
 }
