@@ -19,12 +19,29 @@
         </property>
     </bean>
 
-    <bean id="dateSource" class="com.jolbox.bonecp.BoneCPDataSource">
-        <property name="driverClass" value="${jdbc.driverClass}"/>
-        <property name="jdbcUrl" value="${jdbc.jdbcUrl}"/>
-        <property name="username" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
+    <bean id="masterDateSource" class="com.jolbox.bonecp.BoneCPDataSource">
+        <property name="driverClass" value="${jdbc.master.driverClass}"/>
+        <property name="jdbcUrl" value="${jdbc.master.jdbcUrl}"/>
+        <property name="username" value="${jdbc.master.username}"/>
+        <property name="password" value="${jdbc.master.password}"/>
     </bean>
 
+    <bean id="slave01DateSource" class="com.jolbox.bonecp.BoneCPDataSource">
+        <property name="driverClass" value="${jdbc.slave.driverClass}"/>
+        <property name="jdbcUrl" value="${jdbc.slave.jdbcUrl}"/>
+        <property name="username" value="${jdbc.slave.username}"/>
+        <property name="password" value="${jdbc.slave.password}"/>
+    </bean>
+
+    <bean id="dateSource" class="com.korat.manage.datasource.DynamicDataSource">
+        <!--设置多个数据源-->
+        <property name="targetDataSources">
+            <map key-type="java.lang.String">
+                <!--这个key需要和程序中的key一致-->
+                <entry key="master" value-ref="masterDateSource"/>
+                <entry key="slave" value-ref="slave01DateSource"/>
+            </map>
+        </property>
+    </bean>
 
 </beans>

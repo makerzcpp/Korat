@@ -2,8 +2,10 @@ package com.korat.web.controller;
 
 import com.korat.order.pojo.Order;
 import com.korat.order.service.OrderService;
+import com.korat.web.bean.Cart;
 import com.korat.web.bean.Item;
 import com.korat.web.bean.User;
+import com.korat.web.service.CartService;
 import com.korat.web.service.ItemService;
 import com.korat.web.service.UserService;
 import org.apache.commons.lang3.StringUtils;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,6 +34,8 @@ public class OrderController {
     private UserService userService;
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private CartService cartService;
     private final String COOKIENAME="TOKEN";
     /**
      * 通過商品id查詢商品返回view
@@ -83,6 +88,18 @@ public class OrderController {
         Order order = orderService.queryOrderById(orderId);
         mv.addObject("order", order);
         mv.addObject("date", new DateTime().plusDays(2).toString("MM月dd日"));
+        return mv;
+    }
+
+    /**
+     * 提交订单
+     * @return
+     */
+    @RequestMapping(value = "create", method = RequestMethod.GET)
+    public ModelAndView toCartOrder() {
+        ModelAndView mv = new ModelAndView("order-cart");
+        List<Cart> cartList = this.cartService.queryCartList();
+        mv.addObject("carts", cartList);
         return mv;
     }
 }

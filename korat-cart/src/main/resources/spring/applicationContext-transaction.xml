@@ -14,7 +14,15 @@
     <!--定义事务策略-->
     <tx:advice id="txActive" transaction-manager="transactionManager">
         <tx:attributes>
+            <!--定义查询方法都是只读的-->
             <tx:method name="query*" read-only="true"/>
+            <tx:method name="find*" read-only="true"/>
+            <tx:method name="get*" read-only="true"/>
+            <!--主库执行操作，事务传播行为为默认行为-->
+            <tx:method name="save*" propagation="REQUIRED"/>
+            <tx:method name="update" propagation="REQUIRED"/>
+            <tx:method name="delete" propagation="REQUIRED"/>
+            <!--其他方法使用默认事务策略-->
             <tx:method name="*"/>
         </tx:attributes>
     </tx:advice>

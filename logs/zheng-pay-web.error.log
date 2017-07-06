@@ -77,3 +77,4 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'KO
 	... 50 more
 2017-07-04 22:38:50 [ ERROR ] [ DruidDataSource.java :401(init)] mysql should not use 'PoolPreparedStatements'
 2017-07-05 23:53:04 [ ERROR ] [ DruidDataSource.java :401(init)] mysql should not use 'PoolPreparedStatements'
+2017-07-06 13:52:51 [ ERROR ] [ DruidDataSource.java :401(init)] mysql should not use 'PoolPreparedStatements'

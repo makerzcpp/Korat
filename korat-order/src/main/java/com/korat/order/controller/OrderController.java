@@ -5,7 +5,6 @@ import com.korat.order.pojo.PageResult;
 import com.korat.order.pojo.ResultMsg;
 import com.korat.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,12 +13,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
+
 @RequestMapping("/order")
 @Controller(value = "OrderController_order")
 public class OrderController {
 
 	@Autowired
 	private OrderService orderService;
+
 	
 	/**
 	 * 创建订单
@@ -68,4 +69,6 @@ public class OrderController {
 	public ResultMsg changeOrderStatus(@RequestBody String json) {
 		return orderService.changeOrderStatus(json);
 	}
+
+
 }

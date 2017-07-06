@@ -25,18 +25,19 @@ public class CartService {
     private CartMapper cartMapper;
     @Autowired
     private ItemService itemService;
+
     /**
      * 添加商品到购物车
      *
      * @param itemId
      */
     public void addItemToCart(Long itemId) {
-        User user= UserThreadLocal.get();
-        Cart cart=new Cart();
+        User user = UserThreadLocal.get();
+        Cart cart = new Cart();
         cart.setItemId(itemId);
         cart.setUserId(user.getId());
         cart = cartMapper.selectOne(cart);
-        Cart record=new Cart();
+        Cart record = new Cart();
         // 购物车中没有这个商品
         if (cart == null) {
             Item item = itemService.queryItemByItemId(itemId);
@@ -47,10 +48,10 @@ public class CartService {
             record.setNum(1);
             record.setCreated(new Date());
             record.setUpdated(record.getCreated());
-        //    插入到数据库
+            //    插入到数据库
             this.cartMapper.insert(record);
-        }else {
-        //    购物车中有这件商品
+        } else {
+            //    购物车中有这件商品
             record.setNum(cart.getNum() + 1);
             record.setUpdated(new Date());
             this.cartMapper.updateByPrimaryKey(cart);
@@ -66,13 +67,14 @@ public class CartService {
         Example example = new Example(Cart.class);
         example.setOrderByClause("created DESC");
         //solartodo 分页
-        User user=UserThreadLocal.get();
+        User user = UserThreadLocal.get();
         example.createCriteria().andEqualTo("userId", user.getId());
         return this.cartMapper.selectByExample(example);
     }
 
     /**
      * 更新商品数量
+     *
      * @param itemId
      * @param num
      */
@@ -80,7 +82,7 @@ public class CartService {
         Example example = new Example(Cart.class);
         example.createCriteria().andEqualTo("userId", UserThreadLocal.get().getId())
                 .andEqualTo("itemId", itemId);
-        Cart cart=new Cart();
+        Cart cart = new Cart();
         cart.setNum(num);
         cart.setUpdated(new Date());
         this.cartMapper.updateByExampleSelective(cart, example);
@@ -96,5 +98,21 @@ public class CartService {
         example.createCriteria().andEqualTo("userId", UserThreadLocal.get().getId())
                 .andEqualTo("itemId", itemId);
         this.cartMapper.deleteByExample(example);
+    }
+
+    /**
+     * 通过用户id查询购物车
+     *
+     * @param userId
+     * @return
+     */
+    public List<Cart> queryCartListByUserId(Long userId) {
+        Example example = new Example(Cart.class);
+        example.createCriteria().andEqualTo("userId", userId);
+        List<Cart> cartList = cartMapper.selectByExample(example);
+        if (cartList == null) {
+            return null;
+        }
+        return cartList;
     }
 }
