@@ -15,12 +15,25 @@
     <tx:advice id="txActive" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="query*" read-only="true"/>
+            <tx:method name="find*" read-only="true"/>
+            <tx:method name="get*" read-only="true"/>
+            <!--主库执行操作，事务传播行为为默认行为-->
+            <tx:method name="save*" propagation="REQUIRED"/>
+            <tx:method name="update" propagation="REQUIRED"/>
+            <tx:method name="delete" propagation="REQUIRED"/>
+            <!--其他方法使用默认事务策略-->
             <tx:method name="*"/>
         </tx:attributes>
     </tx:advice>
 
+    <!--定义aop切面处理器-->
+    <bean class="com.korat.manage.datasource.DataSourceAspect" id="dataSourceAspect"/>
     <aop:config>
-        <aop:pointcut id="myPointCut" expression="execution(* com.korat..usermanage.service.*.*(..))"/>
+        <aop:pointcut id="myPointCut" expression="execution(* com.korat.manage.service.*.*(..))"/>
         <aop:advisor advice-ref="txActive" pointcut-ref="myPointCut"/>
+        <!--将切面应用到自定义的切面处理器上，-9999保证该切面优先级最高执行-->
+        <aop:aspect ref="dataSourceAspect" order="-9999">
+            <aop:before method="before" pointcut-ref="myPointCut"/>
+        </aop:aspect>
     </aop:config>
 </beans>

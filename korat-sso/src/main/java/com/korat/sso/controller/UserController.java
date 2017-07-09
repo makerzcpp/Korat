@@ -1,5 +1,7 @@
 package com.korat.sso.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.korat.common.httpclient.HttpResult;
 import com.korat.sso.domain.User;
 import com.korat.sso.service.LoginService;
 import com.korat.sso.service.UserService;
@@ -42,6 +44,7 @@ public class UserController {
 
     @Value("${COOKIE_NAME}")
     private String COOKIE_NAME;
+    private static final ObjectMapper objectMapper = new ObjectMapper();
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String toLogin() {
         return "login";
@@ -172,11 +175,15 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/query/{token}", method = RequestMethod.GET)
-    public ResponseEntity<User> queryUserName(@PathVariable("token") String token) {
+    public ResponseEntity<Map<String,Object>> queryUserName(@PathVariable("token") String token) {
+        Map<String, Object> result = new HashMap<>();
         try {
-            User user = loginService.queryUserRedis(token);
+            User user = loginService.queryUserRedis(COOKIE_NAME+"_"+token);
             if (user != null) {
-                return ResponseEntity.status(HttpStatus.OK).body(user);
+                String data = objectMapper.writeValueAsString(user);
+                result.put("status", "200");
+                result.put("data", data);
+                return ResponseEntity.status(HttpStatus.OK).body(result);
             }
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         } catch (Exception e) {
@@ -184,4 +191,5 @@ public class UserController {
         }
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
     }
+
 }

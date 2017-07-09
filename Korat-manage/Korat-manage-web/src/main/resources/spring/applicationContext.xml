@@ -42,6 +42,8 @@
                 <entry key="slave" value-ref="slave01DateSource"/>
             </map>
         </property>
+        <!--定义默认的数据库，默认走写库-->
+        <property name="defaultTargetDataSource" ref="masterDateSource"/>
     </bean>
 
 </beans>

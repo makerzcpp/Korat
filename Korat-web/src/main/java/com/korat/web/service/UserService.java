@@ -1,5 +1,6 @@
 package com.korat.web.service;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.korat.common.service.ApiService;
 import com.korat.web.bean.User;
@@ -25,13 +26,15 @@ public class UserService {
     private ObjectMapper objectMapper = new ObjectMapper();
 
     public User queryUserByToken(String token) {
-        String url = KORAT_SSO_URL + "/service/user/query/TOKEN_"+token;
+        String url = KORAT_SSO_URL + "/service/user/query/"+token;
         try {
             String data = apiService.doGet(url);
             if (StringUtils.isEmpty(data)) {
                 return null;
             }
-            User user = objectMapper.readValue(data, User.class);
+            JsonNode jsonNode = objectMapper.readTree(data);
+            String value=jsonNode.get("data").asText();
+            User user = objectMapper.readValue(value, User.class);
             if (user != null) {
                 return user;
             }

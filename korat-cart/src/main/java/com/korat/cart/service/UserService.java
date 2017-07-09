@@ -2,10 +2,8 @@ package com.korat.cart.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.korat.cart.bean.User;
-import com.korat.common.service.ApiService;
-import org.apache.commons.lang3.StringUtils;
+import com.korat.common.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -18,26 +16,49 @@ import java.io.IOException;
  */
 @Service(value = "CART_USERSERVICE")
 public class UserService {
-    @Value("${KORAT_SSO_URL}")
-    public String KORAT_SSO_URL;
-    @Autowired
-    private ApiService apiService;
+    //@Value("${KORAT_SSO_URL}")
+    //public String KORAT_SSO_URL;
+    //@Autowired
+    //private ApiService apiService;
     private ObjectMapper objectMapper = new ObjectMapper();
-
+    @Autowired
+    private RedisService redisService;
     public User queryUserByToken(String token) {
-        String url = KORAT_SSO_URL + "/service/user/query/TOKEN_"+token;
+        String data = redisService.get("TOKEN_" + token);
         try {
-            String data = apiService.doGet(url);
-            if (StringUtils.isEmpty(data)) {
-                return null;
-            }
-            User user = objectMapper.readValue(data, User.class);
-            if (user != null) {
-                return user;
+            if (data != null) {
+                User user = objectMapper.readValue(data, User.class);
+                if (user != null) {
+                    return user;
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
+        //String url = KORAT_SSO_URL + "/service/user/query/"+token;
+        //try {
+        //    String data = apiService.doGet(url);
+        //    if (StringUtils.isEmpty(data)) {
+        //        return null;
+        //    }
+        //    if (StringUtils.contains(data, "code")) {
+        //        JsonNode jsonNode = objectMapper.readTree(data);
+        //        String value= String.valueOf(jsonNode.get("data"));
+        //        StringUtils.replace(value, "\\", "");
+        //        User user = objectMapper.readValue(value, User.class);
+        //        if (user != null) {
+        //            return user;
+        //        }
+        //    }else {
+        //        User user = objectMapper.readValue(data, User.class);
+        //        if (user != null) {
+        //            return user;
+        //        }
+        //    }
+        //} catch (IOException e) {
+        //    e.printStackTrace();
+        //}
+        //return null;
     }
 }

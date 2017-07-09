@@ -48,6 +48,7 @@ public class CartCookieService {
         //购物车中没有指定的商品
         if (cart == null) {
             Item item = this.itemService.queryItemByItemId(itemId);
+            cart=new Cart();
             cart.setItemId(itemId);
             cart.setNum(1);
             cart.setItemTitle(item.getTitle());
