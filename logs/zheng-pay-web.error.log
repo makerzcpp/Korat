@@ -83,3 +83,5 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'KO
 2017-07-09 19:04:32 [ ERROR ] [ DruidDataSource.java :401(init)] mysql should not use 'PoolPreparedStatements'
 2017-07-09 19:09:18 [ ERROR ] [ DruidDataSource.java :401(init)] mysql should not use 'PoolPreparedStatements'
 2017-07-09 19:20:17 [ ERROR ] [ DruidDataSource.java :401(init)] mysql should not use 'PoolPreparedStatements'
+2017-07-10 13:57:04 [ ERROR ] [ DruidDataSource.java :401(init)] mysql should not use 'PoolPreparedStatements'
+2017-07-10 17:21:59 [ ERROR ] [ DruidDataSource.java :401(init)] mysql should not use 'PoolPreparedStatements'

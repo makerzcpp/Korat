@@ -3,6 +3,7 @@ package com.korat.sso.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.korat.common.httpclient.HttpResult;
 import com.korat.sso.domain.User;
+import com.korat.sso.service.CartCookieService;
 import com.korat.sso.service.LoginService;
 import com.korat.sso.service.UserService;
 import com.korat.sso.util.CookieUtils;
@@ -41,16 +42,25 @@ public class UserController {
     private UserService userService;
     @Autowired
     private LoginService loginService;
-
+    @Autowired
+    private CartCookieService cartCookieService;
     @Value("${COOKIE_NAME}")
     private String COOKIE_NAME;
     private static final ObjectMapper objectMapper = new ObjectMapper();
+
+    /**
+     * 跳转到登录
+     *
+     * @return
+     */
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String toLogin() {
         return "login";
     }
+
     /**
      * 跳转方法
+     *
      * @return
      */
     @RequestMapping(method = RequestMethod.GET, value = "register")
@@ -61,15 +71,16 @@ public class UserController {
 
     /**
      * 验证用户是否存在
+     *
      * @param param
      * @param type
      * @return
      */
     @RequestMapping(method = RequestMethod.GET, value = "/check/{param}/{type}")
-    public ResponseEntity<Boolean> check(@PathVariable("param") String param, @PathVariable("type") Integer type) {
+    public ResponseEntity<Boolean> checkUser(@PathVariable("param") String param, @PathVariable("type") Integer type) {
         try {
             Boolean result = userService.check(param, type);
-            if (result!=null) {
+            if (result != null) {
                 //和前端逻辑不一样，修改此处
                 return ResponseEntity.ok(false);
             }
@@ -82,34 +93,8 @@ public class UserController {
     }
 
     /**
-     * 保存用户
-     * @param user
-     * @return
-     */
-    //@RequestMapping(method = RequestMethod.POST, value = "doRegister")
-    //public Map<String, Object> saveUser(User user) {
-    //    Map<String, Object> result = new HashMap<>();
-    //    try {
-    //
-    //        Boolean flag = userService.saveUser(user);
-    //        if (flag) {
-    //            result.put("status", "200");
-    //        }else {
-    //            result.put("status", "500");
-    //            result.put("data", "嘿嘿嘿~");
-    //        }
-    //        return result;
-    //    } catch (Exception e) {
-    //        e.printStackTrace();
-    //        result.put("status", "500");
-    //        result.put("data", "啪啪啪~");
-    //    }
-    //    return result;
-    //}
-
-
-    /**
      * 使用hibernate验证框架
+     *
      * @param user
      * @param bindingResult
      * @return
@@ -120,7 +105,7 @@ public class UserController {
         try {
             if (bindingResult.hasErrors()) {
                 List<String> msgs = new ArrayList<>();
-                List<ObjectError> allErrors=bindingResult.getAllErrors();
+                List<ObjectError> allErrors = bindingResult.getAllErrors();
                 for (ObjectError objectError : allErrors) {
                     msgs.add(objectError.getDefaultMessage());
                 }
@@ -142,24 +127,27 @@ public class UserController {
 
     /**
      * 登录
+     *
      * @param userName
      * @param password
      * @return
      */
     @RequestMapping(value = "doLogin", method = RequestMethod.POST)
-    public ResponseEntity<Map<String, Object>> doLogin(@RequestParam("username") String userName
+    public ResponseEntity<Map<String, Object>> login(@RequestParam("username") String userName
             , @RequestParam("password") String password,
-                                       HttpServletRequest request,
-                                       HttpServletResponse response) {
+                                                     HttpServletRequest request,
+                                                     HttpServletResponse response) {
         Map<String, Object> result = new HashMap<>();
         try {
             String token = loginService.doLogin(userName, password);
+            //持久化cookie中的数据
+            cartCookieService.persistenceCart(request,COOKIE_NAME,userName);
             if (token == null) {
                 result.put("status", "400");
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
-            }else {
+            } else {
                 result.put("status", "200");
-                CookieUtils.setCookie(request,response,COOKIE_NAME,token);
+                CookieUtils.setCookie(request, response, COOKIE_NAME, token);
                 return ResponseEntity.status(HttpStatus.OK).body(result);
             }
         } catch (Exception e) {
@@ -171,14 +159,15 @@ public class UserController {
 
     /**
      * 从redis中找到用户信息
+     *
      * @param token
      * @return
      */
     @RequestMapping(value = "/query/{token}", method = RequestMethod.GET)
-    public ResponseEntity<Map<String,Object>> queryUserName(@PathVariable("token") String token) {
+    public ResponseEntity<Map<String, Object>> queryUserName(@PathVariable("token") String token) {
         Map<String, Object> result = new HashMap<>();
         try {
-            User user = loginService.queryUserRedis(COOKIE_NAME+"_"+token);
+            User user = loginService.queryUserRedis(COOKIE_NAME + "_" + token);
             if (user != null) {
                 String data = objectMapper.writeValueAsString(user);
                 result.put("status", "200");

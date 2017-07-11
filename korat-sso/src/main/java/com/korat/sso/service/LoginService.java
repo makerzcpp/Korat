@@ -1,6 +1,5 @@
 package com.korat.sso.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.korat.common.service.RedisService;
 import com.korat.sso.domain.User;

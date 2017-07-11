@@ -34,15 +34,16 @@ public class CartController {
 
     /**
      * 添加商品到购物车
+     *
      * @param itemId
      * @return
      */
     @RequestMapping(value = "{itemId}", method = RequestMethod.GET)
     public String addItemToCart(@PathVariable("itemId") Long itemId, HttpServletRequest request, HttpServletResponse response) {
-        User user= UserThreadLocal.get();
+        User user = UserThreadLocal.get();
         if (user == null) {
-            this.cartCookieService.addItemToCart(itemId,request,response);
-        }else {
+            this.cartCookieService.addItemToCart(itemId, request, response);
+        } else {
             this.cartService.addItemToCart(itemId);
         }
         return "redirect:/cart/list.html";
@@ -50,15 +51,17 @@ public class CartController {
 
     /**
      * 查询购物车商品信息
+     *
      * @return
      */
     @RequestMapping(value = "list", method = RequestMethod.GET)
-    public ModelAndView queryCartList(HttpServletRequest request) {
+    public ModelAndView queryCart(HttpServletRequest request) {
         ModelAndView mv = new ModelAndView("cart");
-        User user=UserThreadLocal.get();
+        User user = UserThreadLocal.get();
         if (user == null) {
-            this.cartCookieService.queryCartList(request);
-        }else {
+            List<Cart> cartList = this.cartCookieService.queryCartList(request);
+            mv.addObject("cartList", cartList);
+        } else {
             List<Cart> cartList = cartService.queryCartList();
             mv.addObject("cartList", cartList);
         }
@@ -67,6 +70,7 @@ public class CartController {
 
     /**
      * 更新商品数量
+     *
      * @param itemId
      * @param num
      * @return
@@ -74,10 +78,10 @@ public class CartController {
     @RequestMapping(value = "update/num/{itemId}/{num}", method = RequestMethod.POST)
     public ResponseEntity<Void> updateItemNum(@PathVariable("itemId") Long itemId, @PathVariable("num") Integer num,
                                               HttpServletRequest request, HttpServletResponse response) {
-        User user=UserThreadLocal.get();
+        User user = UserThreadLocal.get();
         if (user == null) {
             this.cartCookieService.updateItemNum(itemId, num, request, response);
-        }else {
+        } else {
             this.cartService.updateItemNum(itemId, num);
         }
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
@@ -86,17 +90,20 @@ public class CartController {
 
     /**
      * 删除购物车中的商品
+     *
      * @param itemId
      * @return
      */
-    @RequestMapping(value = "delete/{itemId}",method = RequestMethod.GET)
-    public String deleteItemFromCart(@PathVariable("itemId")Long itemId,HttpServletRequest request,HttpServletResponse response){
-        User user=UserThreadLocal.get();
+    @RequestMapping(value = "delete/{itemId}", method = RequestMethod.GET)
+    public String deleteItemFromCart(@PathVariable("itemId") Long itemId, HttpServletRequest request, HttpServletResponse response) {
+        User user = UserThreadLocal.get();
         if (user == null) {
-            this.cartCookieService.deleteItemFromCart(itemId,request,response);
-        }else {
+            this.cartCookieService.deleteItemFromCart(itemId, request, response);
+        } else {
             this.cartService.deleteItemFromCart(itemId);
         }
         return "redirect:/cart/list.html";
     }
+
+
 }

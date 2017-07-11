@@ -230,3 +230,25 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'KO
 2017-07-09 19:20:19 [ WARN ] [ RabbitAdmin.java :375(initialize)]  Auto-declaring a non-durable Queue (KORAT-WEB-ITEM-QUEUE). It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
 2017-07-09 19:20:19 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
 2017-07-09 19:23:35 [ WARN ] [ DispatcherServlet.java :1120(noHandlerFound)]  No mapping found for HTTP request with URI [/user/logout.html] in DispatcherServlet with name 'springmvc'
+2017-07-10 13:57:03 [ WARN ] [ ClassPathMapperScanner.java :226(checkCandidate)]  Skipping MapperFactoryBean with name 'IMapper' and 'com.korat.order.mapper.IMapper' mapperInterface. Bean already defined with the same name!
+2017-07-10 13:57:03 [ WARN ] [ ClassPathMapperScanner.java :226(checkCandidate)]  Skipping MapperFactoryBean with name 'orderMapper' and 'com.korat.order.mapper.OrderMapper' mapperInterface. Bean already defined with the same name!
+2017-07-10 13:57:03 [ WARN ] [ ClassPathMapperScanner.java :158(doScan)]  No MyBatis mapper was found in '[com.korat.order.mapper]' package. Please check your configuration.
+2017-07-10 13:57:04 [ ERROR ] [ DruidDataSource.java :401(init)]  mysql should not use 'PoolPreparedStatements'
+2017-07-10 13:57:05 [ INFO ] [ DruidDataSource.java :450(init)]  {dataSource-1} inited
+2017-07-10 13:57:09 [ WARN ] [ RabbitAdmin.java :375(initialize)]  Auto-declaring a non-durable Queue (KORAT-WEB-ITEM-QUEUE). It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2017-07-10 13:57:09 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
+2017-07-10 13:57:14 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
+2017-07-10 14:04:35 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
+2017-07-10 17:21:58 [ WARN ] [ ClassPathMapperScanner.java :226(checkCandidate)]  Skipping MapperFactoryBean with name 'IMapper' and 'com.korat.order.mapper.IMapper' mapperInterface. Bean already defined with the same name!
+2017-07-10 17:21:58 [ WARN ] [ ClassPathMapperScanner.java :226(checkCandidate)]  Skipping MapperFactoryBean with name 'orderMapper' and 'com.korat.order.mapper.OrderMapper' mapperInterface. Bean already defined with the same name!
+2017-07-10 17:21:58 [ WARN ] [ ClassPathMapperScanner.java :158(doScan)]  No MyBatis mapper was found in '[com.korat.order.mapper]' package. Please check your configuration.
+2017-07-10 17:21:59 [ ERROR ] [ DruidDataSource.java :401(init)]  mysql should not use 'PoolPreparedStatements'
+2017-07-10 17:22:00 [ INFO ] [ DruidDataSource.java :450(init)]  {dataSource-1} inited
+2017-07-10 17:22:01 [ WARN ] [ RabbitAdmin.java :375(initialize)]  Auto-declaring a non-durable Queue (KORAT-WEB-ITEM-QUEUE). It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2017-07-10 17:22:02 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
+2017-07-10 17:22:35 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
+2017-07-10 19:34:12 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
+2017-07-10 20:08:22 [ WARN ] [ DispatcherServlet.java :1120(noHandlerFound)]  No mapping found for HTTP request with URI [/user/login.html] in DispatcherServlet with name 'springmvc'
+2017-07-10 20:41:55 [ INFO ] [ Version.java :30(<clinit>)]  HV000001: Hibernate Validator 5.4.1.Final
+2017-07-10 20:42:34 [ WARN ] [ DispatcherServlet.java :1120(noHandlerFound)]  No mapping found for HTTP request with URI [/user/login.html] in DispatcherServlet with name 'springmvc'
+2017-07-10 20:46:45 [ WARN ] [ DispatcherServlet.java :1120(noHandlerFound)]  No mapping found for HTTP request with URI [/user/sso.korat.com/user/login.html] in DispatcherServlet with name 'springmvc'

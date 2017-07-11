@@ -1,5 +1,6 @@
 package com.korat.sso.service;
 
+import com.github.abel533.entity.Example;
 import com.korat.sso.domain.User;
 import com.korat.sso.mapper.UserMapper;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -65,5 +66,17 @@ public class UserService {
         user.setPassword(DigestUtils.md5Hex(user.getPassword()));
         Integer count = userMapper.insert(user);
         return count ==1;
+    }
+
+    /**
+     * 通过用户名查找用户信息
+     *
+     * @param userName
+     * @return
+     */
+    public User queryUserByUsername(String userName) {
+        Example example = new Example(User.class);
+        example.createCriteria().andEqualTo("userName", userName);
+        return userMapper.selectByExample(example).get(0);
     }
 }

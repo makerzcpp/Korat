@@ -24,7 +24,7 @@ import java.util.List;
  */
 @Service
 public class CartCookieService {
-    private static final String COOKIE_NAME = "TOKEN";
+    private static final String COOKIE_NAME = "ITEM_TOKEN";
     private static final Integer COOKIE_MAX_AGE = 60 * 60 * 24 * 30 * 12;
     private ObjectMapper objectMapper = new ObjectMapper();
     @Autowired
@@ -88,7 +88,7 @@ public class CartCookieService {
      * @return
      */
     public List<Cart> queryCartList(HttpServletRequest request) {
-        String cookieValue = CookieUtils.getCookieValue(request, COOKIE_NAME);
+        String cookieValue = CookieUtils.getCookieValue(request, COOKIE_NAME,"UTF-8");
         if (StringUtils.isEmpty(cookieValue)) {
             return new ArrayList<>(0);
         }

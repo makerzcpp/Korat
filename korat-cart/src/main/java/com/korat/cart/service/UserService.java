@@ -2,8 +2,10 @@ package com.korat.cart.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.korat.cart.bean.User;
+import com.korat.common.service.ApiService;
 import com.korat.common.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -16,13 +18,19 @@ import java.io.IOException;
  */
 @Service(value = "CART_USERSERVICE")
 public class UserService {
-    //@Value("${KORAT_SSO_URL}")
-    //public String KORAT_SSO_URL;
-    //@Autowired
-    //private ApiService apiService;
+    @Value("${KORAT_SSO_URL}")
+    public String KORAT_SSO_URL;
+    @Autowired
+    private ApiService apiService;
     private ObjectMapper objectMapper = new ObjectMapper();
     @Autowired
     private RedisService redisService;
+
+    /**
+     * 根据token查询user
+     * @param token
+     * @return
+     */
     public User queryUserByToken(String token) {
         String data = redisService.get("TOKEN_" + token);
         try {
@@ -60,5 +68,15 @@ public class UserService {
         //    e.printStackTrace();
         //}
         //return null;
+    }
+
+
+    public void doLogin() {
+        String url = KORAT_SSO_URL + "/user/login.html";
+        try {
+            apiService.doGet(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
