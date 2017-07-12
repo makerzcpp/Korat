@@ -14,6 +14,8 @@
       <module fileurl="file://$PROJECT_DIR$/korat-order/korat-order.iml" filepath="$PROJECT_DIR$/korat-order/korat-order.iml" />
       <module fileurl="file://$PROJECT_DIR$/korat-search/korat-search.iml" filepath="$PROJECT_DIR$/korat-search/korat-search.iml" />
       <module fileurl="file://$PROJECT_DIR$/korat-sso/korat-sso.iml" filepath="$PROJECT_DIR$/korat-sso/korat-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/korat-sso-query-api/korat-sso-query-api.iml" filepath="$PROJECT_DIR$/korat-sso-query-api/korat-sso-query-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/korat-sso-query-service/korat-sso-query-service.iml" filepath="$PROJECT_DIR$/korat-sso-query-service/korat-sso-query-service.iml" />
     </modules>
   </component>
 </project>

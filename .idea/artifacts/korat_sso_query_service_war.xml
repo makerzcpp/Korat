@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="korat-sso-query-service:war">
+    <output-path>$PROJECT_DIR$/korat-sso-query-service/target</output-path>
+    <root id="archive" name="korat-sso-query-service.war">
+      <element id="artifact" artifact-name="korat-sso-query-service:war exploded" />
+    </root>
+  </artifact>
+</component>

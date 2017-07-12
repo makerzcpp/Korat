@@ -15,6 +15,8 @@
         <module>korat-order</module>
         <module>korat-search</module>
         <module>korat-cart</module>
+        <module>korat-sso-query-api</module>
+        <module>korat-sso-query-service</module>
     </modules>
     <packaging>pom</packaging>
 

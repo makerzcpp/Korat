@@ -15,6 +15,8 @@
         <module name="korat-order" />
         <module name="korat-search" />
         <module name="korat-sso" />
+        <module name="korat-sso-query-api" />
+        <module name="korat-sso-query-service" />
         <module name="Korat-web" />
         <module name="Koratcommon" />
       </profile>
@@ -31,6 +33,8 @@
       <module name="korat-order" target="1.8" />
       <module name="korat-search" target="1.8" />
       <module name="korat-sso" target="1.8" />
+      <module name="korat-sso-query-api" target="1.8" />
+      <module name="korat-sso-query-service" target="1.8" />
       <module name="Korat-web" target="1.8" />
       <module name="Koratcommon" target="1.8" />
       <module name="Koratmanage" target="1.8" />

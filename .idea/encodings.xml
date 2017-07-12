@@ -13,6 +13,8 @@
     <file url="file://$PROJECT_DIR$/korat-order" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/korat-search" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/korat-sso" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/korat-sso-query-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/korat-sso-query-service" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

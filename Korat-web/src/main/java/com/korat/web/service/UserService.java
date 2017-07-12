@@ -26,7 +26,7 @@ public class UserService {
     private ObjectMapper objectMapper = new ObjectMapper();
 
     public User queryUserByToken(String token) {
-        String url = KORAT_SSO_URL + "/service/user/query/"+token;
+        String url = KORAT_SSO_URL + "/user/"+token;
         try {
             String data = apiService.doGet(url);
             if (StringUtils.isEmpty(data)) {

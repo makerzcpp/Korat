@@ -27,6 +27,12 @@ public class CartCookieService {
     @Autowired
     private CartMapper cartMapper;
 
+    /**
+     * 持久化cookie中的数据
+     * @param request
+     * @param cookie_name
+     * @param userName
+     */
     public void persistenceCart(HttpServletRequest request, String cookie_name, String userName) {
         String value = CookieUtils.getCookieValue(request, cookie_name, true);
         try {

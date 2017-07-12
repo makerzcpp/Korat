@@ -1,5 +1,6 @@
 package com.korat.sso.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.korat.common.httpclient.HttpResult;
 import com.korat.sso.domain.User;
@@ -140,8 +141,12 @@ public class UserController {
         Map<String, Object> result = new HashMap<>();
         try {
             String token = loginService.doLogin(userName, password);
-            //持久化cookie中的数据
-            cartCookieService.persistenceCart(request,COOKIE_NAME,userName);
+
+            String value = CookieUtils.getCookieValue(request, COOKIE_NAME, true);
+            if (StringUtils.isNotEmpty(value)) {
+                //持久化cookie中的数据
+                cartCookieService.persistenceCart(request, COOKIE_NAME, userName);
+            }
             if (token == null) {
                 result.put("status", "400");
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
@@ -166,19 +171,17 @@ public class UserController {
     @RequestMapping(value = "/query/{token}", method = RequestMethod.GET)
     public ResponseEntity<Map<String, Object>> queryUserName(@PathVariable("token") String token) {
         Map<String, Object> result = new HashMap<>();
+        User user = new User();
+        user.setUsername("该服务已经被弃用，转为dubbo或在ssoquery.korat.com");
+        String data = null;
         try {
-            User user = loginService.queryUserRedis(COOKIE_NAME + "_" + token);
-            if (user != null) {
-                String data = objectMapper.writeValueAsString(user);
-                result.put("status", "200");
-                result.put("data", data);
-                return ResponseEntity.status(HttpStatus.OK).body(result);
-            }
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        } catch (Exception e) {
+            data = objectMapper.writeValueAsString(user);
+        } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        result.put("status", "404");
+        result.put("data", data);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 
 }
