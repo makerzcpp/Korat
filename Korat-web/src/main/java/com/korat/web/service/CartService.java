@@ -30,7 +30,7 @@ public class CartService {
      */
     public List<Cart> queryCartList() {
         User user= UserThreadLocal.get();
-        String url="cart.korat.com/service/api/cart/"+user.getId();
+        String url="http://cart.korat.com/service/api/cart/"+user.getId();
         try {
             String result = apiService.doGet(url);
             if (StringUtils.isEmpty(result)) {

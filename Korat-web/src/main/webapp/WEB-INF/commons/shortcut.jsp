@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<script type="text/javascript" src="http://static.korat.com/js/jquery-1.2.6.min.js"></script>
 <div id="shortcut-2013">
 	<div class="w">
 		<ul class="fl lh">
@@ -74,3 +75,23 @@
 		<span class="clr"></span>
 	</div>
 </div>
+<script type="text/javascript">
+	$(function () {
+        var _token = $.cookie("TOKEN");
+        if(!_token){
+            return ;
+        }
+        $.ajax({
+            url : "http://ssoquery.korat.com/user/" + _token,
+            dataType : "jsonp",
+            type : "GET",
+            success : function(data){
+                if(data.status === 200){
+                    var _data = JSON.parse(data.data);
+                    var html =_data.username+"，欢迎来到KORAT！<a href=\"http://www.KORAT.com/user/logout.html\" class=\"link-logout\">[退出]</a>";
+                    $("#loginbar").html(html);
+                }
+            }
+        });
+    })
+</script>

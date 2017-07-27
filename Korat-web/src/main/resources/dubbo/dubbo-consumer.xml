@@ -7,6 +7,9 @@
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181" client="zkclient"/>
 
+    <!--启动时检查提供者是否存在，true报错，false不报错-->
+    <dubbo:consumer check="false"/>
+
     <!--从注册中心查找服务-->
     <dubbo:reference interface="com.korat.sso.query.api.service.UserQueryService" id="userQueryService"/>
 </beans>
