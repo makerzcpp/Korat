@@ -47,7 +47,11 @@ public class UserController {
     private CartCookieService cartCookieService;
     @Value("${COOKIE_NAME}")
     private String COOKIE_NAME;
+    @Value("${COOKIE_ITEM_NAME}")
+    private String COOKIE_ITEM_NAME;
+
     private static final ObjectMapper objectMapper = new ObjectMapper();
+
 
     /**
      * 跳转到登录
@@ -142,10 +146,10 @@ public class UserController {
         try {
             String token = loginService.doLogin(userName, password);
 
-            String value = CookieUtils.getCookieValue(request, COOKIE_NAME, true);
+            String value = CookieUtils.getCookieValue(request, COOKIE_ITEM_NAME, true);
             if (StringUtils.isNotEmpty(value)) {
                 //持久化cookie中的数据
-                cartCookieService.persistenceCart(request, COOKIE_NAME, userName);
+                cartCookieService.persistenceCart(request, COOKIE_ITEM_NAME, userName);
             }
             if (token == null) {
                 result.put("status", "400");

@@ -24,6 +24,7 @@ public class LoginService {
     private ObjectMapper objectMapper=new ObjectMapper();
     /**
      * 用户注册
+     * 生成redis中的token
      * @param userName
      * @param password
      * @return
@@ -37,6 +38,7 @@ public class LoginService {
         if (!Objects.equals(pwd, DigestUtils.md5Hex(password))) {
             return null;
         }
+        //生成TOKEN
         String token = DigestUtils.md5Hex(System.currentTimeMillis() + userName);
 
     //    将token保存到redis中

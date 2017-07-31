@@ -76,7 +76,7 @@ public class UserService {
      */
     public User queryUserByUsername(String userName) {
         Example example = new Example(User.class);
-        example.createCriteria().andEqualTo("userName", userName);
+        example.createCriteria().andEqualTo("username", userName);
         return userMapper.selectByExample(example).get(0);
     }
 }
